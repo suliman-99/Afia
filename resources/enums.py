@@ -1,0 +1,10 @@
+
+
+STATUS_ACTIVE = 1
+STATUS_INACTIVE = 0
+
+STATUS_CHOICES = (
+    (STATUS_ACTIVE, 'Active'),
+    (STATUS_INACTIVE, 'InActive'),
+)
+

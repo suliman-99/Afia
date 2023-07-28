@@ -5,6 +5,14 @@ name = "pypi"
 
 [packages]
 django = "*"
+python-decouple = "*"
+djangorestframework = "*"
+djangorestframework-simplejwt = "*"
+django-debug-toolbar = "*"
+geonamescache = "*"
+mysqlclient = "*"
+pillow = "*"
+unidecode = "*"
 
 [dev-packages]
 
