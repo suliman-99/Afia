@@ -1,0 +1,9 @@
+Cardiology
+Ophthalmology
+Gastroenterology
+Orthopedics
+Gynecology
+Neurology	 
+Pediatrics
+Psychiatry
+general medical services

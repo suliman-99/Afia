@@ -1,38 +1,26 @@
 from Auth.models import User
+from rest_framework import serializers
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = (
+            'id', 'email', 'email_verified', 'role', 'first_name', 'last_name', 'phone_number', 'birth_date', 
+            'gender',  'photo', 'city', 'blood_type', 'length', 'weight', 'chronic_disease', 'genetic_disease', 'other_info',
+            'license', 'available_for_meeting', 'specialization',
+        )
 
 
-def user_dict(user:User):
+def unverified_user_response(user):
     return {
-        'user': {
-            'id': user.id,
-            'email': user.email,
-            'email_verified': user.email_verified,
-            'role': user.role,
-            'first_name': user.first_name,
-            'last_name': user.last_name,
-            'phone_number': user.phone_number,
-            'birth_date': user.birth_date,
-            'gender': user.gender,
-            'photo': str(user.photo),
-            'city': user.city,
-            'blood_type': user.blood_type,
-            'length': user.length,
-            'weight': user.weight,
-            'chronic_disease': user.chronic_disease,
-            'genetic_disease': user.genetic_disease,
-            'other_info': user.other_info,
-            'license': str(user.license),
-            'available_for_meeting': user.available_for_meeting,
-            'specialization': user.specialization,
-        }
+        'user': UserSerializer(user).data,
     }
     
-    
-def verified_user_dict(user, refresh, access):
-    ret = user_dict(user)
-    ret.update({
+
+def verified_user_response(user, refresh, access):
+    return {
+        'user': UserSerializer(user).data,
         'refresh': refresh,
         'access': access,
-    })
-    return ret
+    }
 
