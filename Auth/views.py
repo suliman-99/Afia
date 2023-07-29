@@ -43,36 +43,33 @@ class VerifyView(UpdateAPIView):
         return Response(serializer.validated_data, status=status.HTTP_200_OK)
         
 
-# class RefreshView(UpdateAPIView):
-#     serializer_class = RefreshSerializer
-#     permission_classes = ()
-#     authentication_classes = ()
+class RefreshView(CreateAPIView):
+    serializer_class = RefreshSerializer
+    permission_classes = ()
 
-#     def get_object(self):
-#         try:
-#             return get_object_or_404(User, id=RefreshToken(self.request.data['refresh']).payload.get('user_id'))
-#         except:
-#             raise ValidationError()
+    def post(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        return Response(serializer.validated_data, status=status.HTTP_200_OK)
 
 
-# class ResetPasswordView(UpdateAPIView):
-#     serializer_class = ResetPasswordSerializer
+class ResetPasswordView(UpdateAPIView):
+    serializer_class = ResetPasswordSerializer
 
-#     def get_object(self):
-#         return self.request.user
+    def get_object(self):
+        return self.request.user
     
 
-# class ChangePasswordView(UpdateAPIView):
-#     serializer_class = ChagnePasswordSerializer
+class ChangePasswordView(UpdateAPIView):
+    serializer_class = ChagnePasswordSerializer
 
-#     def get_object(self):
-#         return self.request.user
+    def get_object(self):
+        return self.request.user
 
 
-# class ChangeEmailView(UpdateAPIView):
-#     serializer_class = ChangeEmailSerializer
-#     permission_classes = (IsNotSocialUser, )
+class ChangeEmailView(UpdateAPIView):
+    serializer_class = ChangeEmailSerializer
 
-#     def get_object(self):
-#         return self.request.user
+    def get_object(self):
+        return self.request.user
 

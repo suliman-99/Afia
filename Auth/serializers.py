@@ -1,7 +1,7 @@
 import datetime
 from django.contrib.auth.hashers import check_password
 from rest_framework import serializers
-from rest_framework.exceptions import ValidationError
+from rest_framework.exceptions import ValidationError, NotFound
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.exceptions import InvalidToken
@@ -66,118 +66,97 @@ class VerifySerializer(serializers.ModelSerializer):
         email_code_time = user.email_code_time
         
         if not email_code_time:
-            raise ValidationError('Send a code before verifying it')
+            raise ValidationError({'email_code': 'Send a code before verifying it'})
 
         if datetime.datetime.now(datetime.timezone.utc) - email_code_time > datetime.timedelta(seconds=300):
-            raise ValidationError('Old code')
+            raise ValidationError({'email_code': 'Old code'})
 
         if not check_password(data.pop('email_code'), email_code):
-            raise ValidationError('Wrong code')
+            raise ValidationError({'email_code': 'Wrong code'})
         
         user.verify_email()
         refresh = RefreshToken.for_user(user)
         return verified_user_response(user, str(refresh), str(refresh.access_token))
 
+class RefreshSerializer(serializers.Serializer):
 
-# class RefreshSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = User
-#         fields = ['refresh', 'data']
+    refresh = serializers.CharField()
 
-#     data = UserDataSerializer()
-    
-#     def validate(self, attrs):
-#         try:
-#             data = super().validate(attrs)
+    def validate(self, attrs):
+        data = super().validate(attrs)
+        refresh_str = data.get('refresh')
 
-#             user:User = self.instance
-
-#             if user.refresh == data['refresh']:
-#                 return data
-#         except:
-#             pass
-#         raise InvalidToken()
-    
-#     def update(self, user:User, validated_data):
-#         user.update_tokens()
-#         validated_data.pop('refresh')
-
-#         user_data = UserData.objects.get_or_create(user=user)[0]
-#         serializer = UserDataSerializer(user_data, validated_data['data'])
-#         serializer.is_valid()
-#         serializer.save()
-
-#         return user
-
-#     def to_representation(self, user:User):
-#         return login_response(user, True)
-
-
-# class ResetPasswordSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = User
-#         fields = ['password']
-
-#     def update(self, user:User, validated_data):
-#         user.set_password(validated_data['password'])
-#         user.save()
-#         user.update_tokens()
-#         return user
-    
-#     def to_representation(self, user:User):
-#         return login_response(user, True)
-
-
-# class ChagnePasswordSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = User
-#         fields = ['old_password', 'password']
-    
-#     old_password = serializers.CharField(allow_blank=True)
-
-#     def validate(self, attrs):
-#         data =  super().validate(attrs)
-
-#         user:User = self.instance
-
-#         old_password = data['old_password']
-#         user_password = user.password
-
-#         if user_password:
-#             if not check_password(old_password, user_password):
-#                 raise ValidationError()
-#         else:
-#             if old_password:
-#                 raise ValidationError()
+        try:
+            refresh_obj = RefreshToken(refresh_str)
+        except:
+            raise InvalidToken()
         
-#         return data
+        try:
+            user = User.objects.get(id=refresh_obj.payload.get('user_id'))
+        except:
+            raise NotFound()
+        
+        new_refresh_obj = RefreshToken.for_user(user)
+        new_refresh_str = str(new_refresh_obj)
+        new_access_str = str(new_refresh_obj.access_token)
+        return verified_user_response(user, new_refresh_str, new_access_str)
 
-#     def update(self, user:User, validated_data):
-#         user.set_password(validated_data['password'])
-#         if user.signup_type in get_choices_values(User.SIGNUP_TYPE_SOCIAL_CHOICES) and user.email:
-#             user.verify_email()
-#         user.save()
-#         user.update_tokens()
-#         return user
+
+
+class ResetPasswordSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['password']
+
+    def update(self, user:User, validated_data):
+        user.set_password(validated_data['password'])
+        user.save()
+        return user
     
-#     def to_representation(self, user:User):
-#         return login_response(user, True)
+    def to_representation(self, user:User):
+        return unverified_user_response(user)
 
 
-# class ChangeEmailSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = User
-#         fields = ['email']
-#         extra_kwargs = {
-#             'email': {'required': True},
-#         }
-
-#     def update(self, user:User, validated_data):
-#         user.change_email(validated_data['email'])
-#         user.send_verification_code_email_message()
-#         user.update_tokens()
-#         return user
+class ChagnePasswordSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['old_password', 'password']
     
-#     def to_representation(self, user:User):
-#         return login_response(user, False)
+    old_password = serializers.CharField(allow_blank=True)
+
+    def validate(self, attrs):
+        data =  super().validate(attrs)
+        user:User = self.instance
+
+        old_password = data['old_password']
+        user_password = user.password
+        if not check_password(old_password, user_password):
+            raise ValidationError({'old_password': 'Wrong password'})
+        
+        return data
+
+    def update(self, user:User, validated_data):
+        user.set_password(validated_data['password'])
+        user.save()
+        return user
+    
+    def to_representation(self, user:User):
+        return unverified_user_response(user)
+
+
+class ChangeEmailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['email']
+        extra_kwargs = {
+            'email': {'required': True},
+        }
+
+    def update(self, user:User, validated_data):
+        user.change_email(validated_data['email'])
+        user.send_verification_code_email_message()
+        return user
+    
+    def to_representation(self, user:User):
+        return unverified_user_response(user)
 
