@@ -25,6 +25,7 @@ class City(models.Model):
 
 class Specialization(models.Model):
     name = models.CharField(primary_key=True, max_length=100)
+    description = models.TextField()
 
     def __str__(self) -> str:
         return self.name

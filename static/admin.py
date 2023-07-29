@@ -7,6 +7,7 @@ class CountryAdmin(admin.ModelAdmin):
     list_display = ['name']
     fields = ['name']
     readonly_fields = ['name']
+    search_fields = ['name']
 
 
 @admin.register(City)
@@ -14,11 +15,13 @@ class CityAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'country']
     fields = ['id', 'name', 'country']
     readonly_fields = ['id', 'name', 'country']
+    search_fields = ['name', 'country__name']
 
 
 @admin.register(Specialization)
 class SpecializationAdmin(admin.ModelAdmin):
-    list_display = ['name']
-    fields = ['name']
-    readonly_fields = ['name']
+    list_display = ['name', 'description']
+    fields = ['name', 'description']
+    readonly_fields = ['name', 'description']
+    search_fields = ['name', 'description']
 
