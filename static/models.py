@@ -1,6 +1,10 @@
 from django.db import models 
 
 
+def specialization_icon_path(user, filename):
+    return f'specializations/icons/{user}_{filename}'
+
+
 class Country(models.Model):
     name = models.CharField(primary_key=True, max_length=100)
 
@@ -26,6 +30,7 @@ class City(models.Model):
 class Specialization(models.Model):
     name = models.CharField(primary_key=True, max_length=100)
     description = models.TextField()
+    icon = models.ImageField(max_length=500, upload_to=specialization_icon_path, null=True, blank=True)
 
     def __str__(self) -> str:
         return self.name

@@ -1,3 +1,19 @@
-from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+from static.serializers import *
+from resources.filters import AllFieldsFilterBackend
 
-# Create your views here.
+class CountryViewSet(ModelViewSet):
+    serializer_class = CountrySerializer
+    queryset = Country.objects.all()
+
+
+class CityViewSet(ModelViewSet):
+    serializer_class = CitySerializer
+    queryset = City.objects.all().select_related('country')
+    filter_backends = [AllFieldsFilterBackend]
+
+
+class SpecializationViewSet(ModelViewSet):
+    serializer_class = SpecializationSerializer
+    queryset = Specialization.objects.all()
+
