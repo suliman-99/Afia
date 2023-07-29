@@ -28,15 +28,15 @@ class SignUpSerializer(serializers.ModelSerializer):
         return user
     
     def to_representation(self, instance):
-        return unverified_user_response(instance)
+        return success_response(unverified_user_response(instance), 'Account created successfully. Check your email to verify your account.')
 
 
 class LogInSerializer(TokenObtainPairSerializer):
     def validate(self, attrs):
         ret = super().validate(attrs)
         if not self.user.email_verified:
-            return unverified_user_response(self.user)
-        return verified_user_response(self.user, ret['refresh'], ret['access'])
+            return success_response(unverified_user_response(self.user), 'Check your email to verify your account please.')
+        return success_response(verified_user_response(self.user, ret['refresh'], ret['access']), 'Welcome.')
         
 
 class SendVerificationCodeSerializer(serializers.ModelSerializer):
@@ -76,7 +76,7 @@ class VerifySerializer(serializers.ModelSerializer):
         
         user.verify_email()
         refresh = RefreshToken.for_user(user)
-        return verified_user_response(user, str(refresh), str(refresh.access_token))
+        return success_response(verified_user_response(user, str(refresh), str(refresh.access_token)), 'Verified successfully')
 
 class RefreshSerializer(serializers.Serializer):
 
