@@ -17,4 +17,4 @@ class CitySerializer(serializers.ModelSerializer):
 class SpecializationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Specialization
-        fields = ['name', 'description']
+        fields = ['name', 'description', 'icon']
