@@ -22,25 +22,25 @@ class PatientProfileSerializer(serializers.ModelSerializer):
             'chronic_disease',
             'genetic_disease',
             'other_info',
-
-            ]
+        ]
+        
         extra_kwargs = {
-            'first_name': {'required': True},
-            'last_name': {'required': True},
-            'phone_number': {'required': True},
-            'birth_date': {'required': True},
-            'gender': {'required': True},
+            'first_name': {'required': True, 'allow_null':False, 'allow_blank':False},
+            'last_name': {'required': True, 'allow_null':False, 'allow_blank':False},
+            'phone_number': {'required': True, 'allow_null':False, 'allow_blank':False},
+            'birth_date': {'required': True, 'allow_null':False},
+            'gender': {'required': True, 'allow_null':False},
             'photo': {'required': False},
             'city_id': {'required': True},
-            'blood_type': {'required': True},
-            'length': {'required': True},
-            'weight': {'required': True},
+            'blood_type': {'required': True, 'allow_null':False},
+            'length': {'required': True, 'allow_null':False},
+            'weight': {'required': True, 'allow_null':False},
             'chronic_disease': {'required': False},
             'genetic_disease': {'required': False},
             'other_info': {'required': False},
         }
         
-    city_id = serializers.IntegerField(write_only=True)
+    city_id = serializers.IntegerField(write_only=True, allow_null=False)
     
     def to_representation(self, user:User):
         return unverified_user_response(user)
@@ -60,22 +60,25 @@ class DoctorProfileSerializer(serializers.ModelSerializer):
 
             'license',
             'available_for_meeting',
-            'specialization',
-            
-            ]
+            'specialization_id',
+        ]
+        
         extra_kwargs = {
-            'first_name': {'required': True},
-            'last_name': {'required': True},
-            'phone_number': {'required': True},
-            'birth_date': {'required': True},
-            'gender': {'required': True},
+            'first_name': {'required': True, 'allow_null':False, 'allow_blank':False},
+            'last_name': {'required': True, 'allow_null':False, 'allow_blank':False},
+            'phone_number': {'required': True, 'allow_null':False, 'allow_blank':False},
+            'birth_date': {'required': True, 'allow_null':False},
+            'gender': {'required': True, 'allow_null':False},
             'photo': {'required': False},
-            'city_id': {'required': True},
+            'city_id': {'required': True, 'allow_null':False},
             
-            'license': {'required': True},
-            'available_for_meeting': {'required': True},
-            'specialization': {'required': True},
+            'license': {'required': True, 'allow_null':False},
+            'available_for_meeting': {'required': True, 'allow_null':False},
+            'specialization_id': {'required': True, 'allow_null':False},
         }
+        
+    city_id = serializers.IntegerField(write_only=True, allow_null=False)
+    specialization_id = serializers.IntegerField(write_only=True, allow_null=False)
     
     def to_representation(self, user:User):
         return unverified_user_response(user)
