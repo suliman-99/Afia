@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'seeder',
     'Auth',
     'static',
+    'consultation',
 ]
 
 MIDDLEWARE = [
