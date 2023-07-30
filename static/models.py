@@ -28,7 +28,7 @@ class City(models.Model):
 
 
 class Specialization(models.Model):
-    name = models.CharField(primary_key=True, max_length=100)
+    name = models.CharField(max_length=100, unique=True)
     description = models.TextField()
     icon = models.ImageField(max_length=500, upload_to=specialization_icon_path, null=True, blank=True)
 
