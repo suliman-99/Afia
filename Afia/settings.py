@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'seeding',
     'seeder',
     'Auth',
+    'user_profile',
     'static',
     'consultation',
 ]
@@ -144,7 +145,7 @@ AUTH_USER_MODEL = 'Auth.User'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'Auth.authentication.CustomJWTAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',

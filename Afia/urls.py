@@ -21,6 +21,7 @@ from django.urls import path, include
 
 app_patterns = [
     path('auth/', include('Auth.urls')),
+    path('profile/', include('user_profile.urls')),
     path('static/', include('static.urls')),
     path('consultation/', include('consultation.urls')),
 ]

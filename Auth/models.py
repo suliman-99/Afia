@@ -69,6 +69,7 @@ class User(AbstractUser):
     email_verified = models.BooleanField(default=False)
 
     role = models.PositiveIntegerField(choices=ROLE_CHOICES, null=True, blank=True)
+    accepted = models.BooleanField(default=False)
 
     # ------------------------------------------------------------------------------------
 
@@ -118,8 +119,6 @@ class User(AbstractUser):
     license = models.ImageField(max_length=500, upload_to=user_photo_path, null=True, blank=True)
     available_for_meeting = models.BooleanField(default=False)
     specialization = models.ForeignKey(Specialization, on_delete=models.PROTECT, null=True, blank=True)
-    accepted = models.BooleanField(default=False)
-
 
     REQUIRED_FIELDS = ['password']
     USERNAME_FIELD ='email'

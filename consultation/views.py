@@ -1,11 +1,9 @@
 from rest_framework.viewsets import ModelViewSet
-from rest_framework.permissions import IsAuthenticated
 from consultation.serializers import *
 
 
 class ConsultationViewSet(ModelViewSet):
     serializer_class = SmallConsultationSerializer
-    permission_classes = [IsAuthenticated]
     queryset = Consultation.objects.all() \
         .prefetch_related('patient') \
         .prefetch_related('doctor') \
