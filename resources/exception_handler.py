@@ -12,6 +12,8 @@ def get_first_error_message(detail):
             field_name, ret = get_first_error_message(value)
             if not field_name:
                 field_name = key
+            if ret.startswith('This field may not be'):
+                ret = f'{field_name} field is required!'.capitalize()
             return field_name, ret
     if isinstance(detail, list) or isinstance(detail, tuple):
         return get_first_error_message(detail[0])
