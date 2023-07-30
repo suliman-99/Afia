@@ -6,6 +6,9 @@ from rest_framework.views import exception_handler
 from resources.response_templates import *
 
 
+def message_coordinator(message):
+    return message.replace("_", " ").capitalize()
+
 def get_first_error_message(detail):
     if isinstance(detail, dict):
         for key, value in detail.items():
@@ -13,7 +16,7 @@ def get_first_error_message(detail):
             if not field_name:
                 field_name = key
             if ret.startswith('This field may not be'):
-                ret = f'{field_name} field is required!'.capitalize()
+                ret = message_coordinator(f'{field_name} field is required!')
             return field_name, ret
     if isinstance(detail, list) or isinstance(detail, tuple):
         return get_first_error_message(detail[0])

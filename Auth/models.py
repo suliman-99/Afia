@@ -100,6 +100,8 @@ class User(AbstractUser):
         (BLOOD_TYPE_AB_NEGATIVE, 'AB-'),
     )
 
+    first_name = models.CharField(max_length=150)
+    last_name = models.CharField(max_length=150)
     phone_number = models.CharField(max_length=50, unique=False, null=True, blank=True)
     birth_date = models.DateField(null=True, blank=True)
     gender = models.IntegerField(choices=GENDER_CHOICES, null=True, blank=True)
