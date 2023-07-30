@@ -13,6 +13,7 @@ geonamescache = "*"
 mysqlclient = "*"
 pillow = "*"
 unidecode = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 

@@ -43,6 +43,8 @@ DATABASES = {
 
 INTERNAL_IPS = ['127.0.0.1']
 
+CORS_ALLOWED_ORIGIN_REGEXES = [r"^.*$"]
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -52,6 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'debug_toolbar',
     'rest_framework',
+    "corsheaders",
     'seeding',
     'seeder',
     'Auth',
@@ -59,6 +62,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
