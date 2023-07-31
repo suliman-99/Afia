@@ -5,13 +5,13 @@ from Auth.models import *
 
 @admin.register(User)
 class UserAdmin(BaseUserAdmin):
-    list_display = ['id', 'email', 'email_verified', 'role', 'is_active', 'is_staff', 'is_superuser']
+    list_display = ['id', 'email', 'email_verified', 'role', 'accepted', 'is_active', 'is_staff', 'is_superuser']
 
     fieldsets = ((
         None, {
             'classes': ('wide',),
             'fields': (
-                "id", "email", "email_verified", "role", "is_active", "is_staff", "is_superuser",
+                "id", "email", "email_verified", "role", 'accepted', "is_active", "is_staff", "is_superuser",
                 "first_name", "last_name", 
                 "phone_number", "birth_date", "gender", "photo", "city", 
                 "blood_type", "length", "weight", "chronic_disease", "genetic_disease", "other_info", 

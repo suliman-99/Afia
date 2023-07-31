@@ -9,4 +9,10 @@ router.register(
     basename='consultations'
 )
 
+router.register(
+    'reviews',
+    ReviewViewSet,
+    basename='reviews'
+)
+
 urlpatterns = router.urls

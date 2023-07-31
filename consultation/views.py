@@ -1,25 +1,65 @@
-from rest_framework.viewsets import ModelViewSet
+from rest_framework.viewsets import *
+from rest_framework.mixins import *
+from Auth.models import User
+from consultation.permissions import *
 from consultation.serializers import *
 
 
 class ConsultationViewSet(ModelViewSet):
-    serializer_class = SmallConsultationSerializer
+    permission_classes = [ConsultationPermission]
     queryset = Consultation.objects.all() \
-        .prefetch_related('patient') \
-        .prefetch_related('doctor') \
-        .prefetch_related('specialization') \
+        .select_related('patient') \
+        .select_related('doctor') \
+        
+    def get_serializer_class(self):
+        if self.request.method == 'GET':
+            return GetConsultationSerializer
+        if self.request.method == 'POST':
+            return CreateConsultationSerializer
+        if self.request.user.role == User.ROLE_PATIENT:
+            return PatientUpdateConsultationSerializer
+        if self.request.user.role == User.ROLE_DOCTOR:
+            return DoctorUpdateConsultationSerializer
+        return None
 
     def list(self, request, *args, **kwargs):
         ret = super().list(request, *args, **kwargs)
-        count = Consultation.objects.filter().count()
-        not_done_count = Consultation.objects.filter(done=False).count()
-        # have_not_done_review_count = Consultation.objects.filter(done=False).count()
-        have_not_done_review_count = 0
-        data = ret .data
+        count = Consultation.objects.all().count()
+        pending_count = Consultation.objects.filter(done=False).count()
+        have_pending_review_count = Consultation.objects.filter(reviews__done=False).count()
+        data = ret.data
         ret.data = {}
         ret.data['count'] = count
-        ret.data['not_done_count'] = not_done_count
-        ret.data['have_not_done_review_count'] = have_not_done_review_count
+        ret.data['pending_count'] = pending_count
+        ret.data['have_pending_review_count'] = have_pending_review_count
+        ret.data['data'] = data
+        return ret
+
+
+class ReviewViewSet(ModelViewSet):
+    permission_classes = [ReviewPermission]
+    queryset = Review.objects.all() \
+        .select_related('consultation') \
+        
+    def get_serializer_class(self):
+        if self.request.method == 'GET':
+            return GetReviewSerializer
+        if self.request.method == 'POST':
+            return CreateReviewSerializer
+        if self.request.user.role == User.ROLE_PATIENT:
+            return PatientUpdateReviewSerializer
+        if self.request.user.role == User.ROLE_DOCTOR:
+            return DoctorUpdateReviewSerializer
+        return None
+
+    def list(self, request, *args, **kwargs):
+        ret = super().list(request, *args, **kwargs)
+        count = Review.objects.all().count()
+        pending_count = Review.objects.filter(done=False).count()
+        data = ret.data
+        ret.data = {}
+        ret.data['count'] = count
+        ret.data['pending_count'] = pending_count
         ret.data['data'] = data
         return ret
 
