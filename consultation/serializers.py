@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from rest_framework.exceptions import NotFound, ValidationError
+from rest_framework.exceptions import NotFound, ValidationError, PermissionDenied
 from Auth.serializers import *
 from static.serializers import *
 from consultation.models import *
@@ -113,15 +113,14 @@ class CreateReviewSerializer(serializers.ModelSerializer):
         except Consultation.DoesNotExist:
             raise NotFound('The consultation you specified is not exist!')
         
-        return super().validate(attrs)
-    
-    def create(self, validated_data):
-        consultation = validated_data['consultation']
         if consultation.patient == self.context['request'].user:
-            validated_data['requester'] = Review.REQUESTER_PATIENT
+            attrs['requester'] = Review.REQUESTER_PATIENT
         elif consultation.doctor == self.context['request'].user:
-            validated_data['requester'] = Review.REQUESTER_DOCTOR
-        return super().create(validated_data)
+            attrs['requester'] = Review.REQUESTER_DOCTOR
+        else:
+            raise PermissionDenied('You cant add a review on this consultation')
+        
+        return super().validate(attrs)
     
     def to_representation(self, instance):
         return GetReviewSerializer(instance).data
