@@ -2,7 +2,7 @@ from rest_framework.viewsets import GenericViewSet
 from rest_framework.mixins import RetrieveModelMixin, UpdateModelMixin, ListModelMixin
 from rest_framework.permissions import IsAuthenticated
 from user_profile.serializers import *
-from user_profile.filters import DoctorFilterBackend
+from user_profile.filters import *
 
 
 class PatientProfileViewSet(GenericViewSet, RetrieveModelMixin, UpdateModelMixin):
@@ -24,5 +24,5 @@ class DoctorProfileViewSet(GenericViewSet, RetrieveModelMixin, UpdateModelMixin)
 class DoctorViewSet(GenericViewSet, ListModelMixin):
     serializer_class = UserSerializer
     queryset = User.objects.filter(accepted=True, role=User.ROLE_DOCTOR)
-    filter_backends = [DoctorFilterBackend]
+    filter_backends = [DoctorSpecializationFilterBackend]
 
