@@ -9,7 +9,8 @@ from advice.serializers import *
 class AdviceViewSet(GenericViewSet, ListModelMixin):
 
     def list(self, request, *args, **kwargs):
-        advices = random.shuffle(list(Advice.objects.all()))
+        advices = list(Advice.objects.all())
+        random.shuffle(advices)
 
         short_advices = []
         meduim_advices = []
@@ -38,9 +39,9 @@ class AdviceViewSet(GenericViewSet, ListModelMixin):
                     long_advices.append(advice)
 
         data = {
-            'short_advices': short_advices,
-            'meduim_advices': meduim_advices,
-            'long_advices': long_advices,
+            'short_advices': AdviceSerializer(short_advices, many=True).data,
+            'meduim_advices': AdviceSerializer(meduim_advices, many=True).data,
+            'long_advices': AdviceSerializer(long_advices, many=True).data,
         }
 
         return Response(success_response(data), status.HTTP_200_OK)
