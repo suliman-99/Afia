@@ -1,7 +1,6 @@
 from rest_framework.viewsets import GenericViewSet
 from rest_framework.mixins import RetrieveModelMixin, UpdateModelMixin, ListModelMixin
 from rest_framework.permissions import IsAuthenticated
-from rest_framework_simplejwt.authentication import JWTAuthentication
 from user_profile.serializers import *
 from user_profile.filters import DoctorFilterBackend
 
@@ -9,7 +8,6 @@ from user_profile.filters import DoctorFilterBackend
 class PatientProfileViewSet(GenericViewSet, RetrieveModelMixin, UpdateModelMixin):
     serializer_class = PatientProfileSerializer
     permission_classes = [IsAuthenticated]
-    authentication_classes = [JWTAuthentication]
 
     def get_object(self):
         return self.request.user
@@ -18,7 +16,6 @@ class PatientProfileViewSet(GenericViewSet, RetrieveModelMixin, UpdateModelMixin
 class DoctorProfileViewSet(GenericViewSet, RetrieveModelMixin, UpdateModelMixin):
     serializer_class = DoctorProfileSerializer
     permission_classes = [IsAuthenticated]
-    authentication_classes = [JWTAuthentication]
 
     def get_object(self):
         return self.request.user

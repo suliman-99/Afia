@@ -145,10 +145,10 @@ AUTH_USER_MODEL = 'Auth.User'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'Auth.authentication.CustomJWTAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+        'resources.permissions.IsAcceptedOrReadOnly',
     ],
     'EXCEPTION_HANDLER': 'resources.exception_handler.custom_exception_handler',
 }
