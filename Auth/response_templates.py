@@ -14,12 +14,6 @@ class UserSerializer(serializers.ModelSerializer):
     city = CitySerializer()
     specialization = SpecializationSerializer()
 
-    def to_representation(self, instance):
-        ret = super().to_representation(instance)
-        ret['first_name'] = 'saeed'
-        ret['last_name'] = 'alhomar'
-        return ret
-
 
 def unverified_user_response(user):
     return {

@@ -43,7 +43,7 @@ class PatientProfileSerializer(serializers.ModelSerializer):
     city_id = serializers.IntegerField(write_only=True, allow_null=False)
     
     def to_representation(self, user:User):
-        return unverified_user_response(user)
+        return UserSerializer(user).data
 
 
 class DoctorProfileSerializer(serializers.ModelSerializer):
@@ -81,5 +81,5 @@ class DoctorProfileSerializer(serializers.ModelSerializer):
     specialization_id = serializers.IntegerField(write_only=True, allow_null=False)
     
     def to_representation(self, user:User):
-        return unverified_user_response(user)
+        return UserSerializer(user).data
     
