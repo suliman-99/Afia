@@ -15,4 +15,10 @@ router.register(
     basename='doctor-profiles'
 )
 
+router.register(
+    'doctors',
+    DoctorViewSet,
+    basename='doctors'
+)
+
 urlpatterns = router.urls

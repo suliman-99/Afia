@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from static.serializers import *
 from Auth.models import User
-from Auth.response_templates import unverified_user_response
+from Auth.response_templates import *
 
 
 class PatientProfileSerializer(serializers.ModelSerializer):
