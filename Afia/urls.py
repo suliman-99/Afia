@@ -24,6 +24,7 @@ app_patterns = [
     path('profile/', include('user_profile.urls')),
     path('static/', include('static.urls')),
     path('consultation/', include('consultation.urls')),
+    path('advice/', include('advice.urls')),
 ]
 
 urlpatterns = [
