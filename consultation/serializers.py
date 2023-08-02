@@ -8,9 +8,13 @@ from consultation.models import *
 class GetConsultationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Consultation
-        fields = ['id', 'symptoms', 'additional_explanation', 
-                  'analysis','created_at', 'done',
-                  'patient', 'doctor']
+        fields = [
+            'id', 
+            'symptoms', 'additional_explanation', 'analysis',
+            'diagnosis', 'prescription', 'treatment_duration',
+            'created_at', 'done',
+            'patient', 'doctor',
+        ]
         
     patient = UserSerializer()
     doctor = UserSerializer()
@@ -86,8 +90,13 @@ class DoctorUpdateConsultationSerializer(serializers.ModelSerializer):
 class GetReviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Review
-        fields = ['id', 'review_reasons', 'additional_explanation', 'analysis', 'created_at', 'done',
-                  'requester', 'consultation']
+        fields = [
+            'id', 
+            'review_reasons', 'additional_explanation', 'analysis', 
+            'diagnosis', 'prescription', 'treatment_duration',
+            'created_at', 'done',
+            'requester', 'consultation',
+        ]
         
     consultation = GetConsultationSerializer()
 
