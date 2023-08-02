@@ -46,6 +46,7 @@ INTERNAL_IPS = ['127.0.0.1']
 CORS_ALLOWED_ORIGIN_REGEXES = [r"^.*$"]
 
 INSTALLED_APPS = [
+    'seeding',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -55,12 +56,12 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'rest_framework',
     "corsheaders",
-    'seeding',
     'seeder',
     'Auth',
     'user_profile',
     'static',
     'consultation',
+    'advice',
 ]
 
 MIDDLEWARE = [

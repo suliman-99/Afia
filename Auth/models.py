@@ -21,7 +21,6 @@ class UserManager(BaseUserManager):
         password = data.pop('password')
         if data.get('role') == User.ROLE_PATIENT:
             data['accepted'] = True
-        print(data)
         user = self.create(**data)
         user.set_password(password)
         user.save()
