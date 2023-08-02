@@ -64,6 +64,7 @@ INSTALLED_APPS = [
     'statics',
     'consultation',
     'advice',
+    'post',
 ]
 
 MIDDLEWARE = [

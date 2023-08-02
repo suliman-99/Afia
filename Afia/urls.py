@@ -25,6 +25,7 @@ app_patterns = [
     path('statics/', include('statics.urls')),
     path('consultation/', include('consultation.urls')),
     path('advice/', include('advice.urls')),
+    path('post/', include('post.urls')),
 ]
 
 urlpatterns = [
