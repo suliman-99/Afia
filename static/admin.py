@@ -20,8 +20,8 @@ class CityAdmin(admin.ModelAdmin):
 
 @admin.register(Specialization)
 class SpecializationAdmin(admin.ModelAdmin):
-    list_display = ['name', 'description', 'icon']
-    fields = ['name', 'description', 'icon']
-    readonly_fields = ['name']
-    search_fields = ['name', 'description']
+    list_display = ['id', 'name', 'description', 'icon']
+    fields = ['id', 'name', 'description', 'icon']
+    readonly_fields = ['id']
+    search_fields = ['id', 'name', 'description']
 
