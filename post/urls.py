@@ -11,7 +11,7 @@ router.register(
 
 router.register(
     'comments',
-    PostViewSet,
+    CommentViewSet,
     basename='comments'
 )
 

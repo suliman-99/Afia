@@ -7,14 +7,15 @@ from post.models import *
 class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
-        fields = ['id', 'content', 'user', 'post_id']
+        fields = ['id', 'content', 'post_id', 'user']
 
-    user = UserSerializer()
-    post_id = serializers.CharField(write_only=True)
+    user = UserSerializer(read_only=True)
+    post_id = serializers.CharField()
 
     def create(self, validated_data):
-        post_id = validated_data.pop('post_id')
+        validated_data['user'] = self.context['request'].user
 
+        post_id = validated_data.pop('post_id')
         try:
             validated_data['post'] = Post.objects.get(id=post_id)
         except Post.DoesNotExist:
@@ -28,6 +29,10 @@ class PostSerializer(serializers.ModelSerializer):
         model = Post
         fields = ['id', 'content', 'photo', 'user', 'comments']
 
-    user = UserSerializer()
-    comments = CommentSerializer(many=True)
+    user = UserSerializer(read_only=True)
+    comments = CommentSerializer(many=True, read_only=True)
+
+    def create(self, validated_data):
+        validated_data['user'] = self.context['request'].user
+        return super().create(validated_data)
         

@@ -11,7 +11,7 @@ def user_license_path(post, filename):
 
 class Post(models.Model):
     content = models.TextField()
-    photo = models.ImageField()
+    photo = models.ImageField(null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts')
 
     def __str__(self) -> str:
