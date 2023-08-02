@@ -1,12 +1,15 @@
 from rest_framework.viewsets import *
 from rest_framework.mixins import *
+from resources.permissions import *
 from Auth.models import User
 from consultation.permissions import *
 from consultation.serializers import *
+from consultation.filters import *
 
 
 class ConsultationViewSet(ModelViewSet):
-    permission_classes = [ConsultationPermission]
+    permission_classes = [IsAccepted, IsConsultationOwner, IsNotDoneForUpdate]
+    filter_backends = [ConsultationOwnerFilterBackend]
     queryset = Consultation.objects.all() \
         .select_related('patient') \
         .select_related('doctor') \
@@ -37,7 +40,8 @@ class ConsultationViewSet(ModelViewSet):
 
 
 class ReviewViewSet(ModelViewSet):
-    permission_classes = [ReviewPermission]
+    permission_classes = [IsAccepted, IsReviewOwner, IsNotDoneForUpdate]
+    filter_backends = [ReviewOwnerFilterBackend]
     queryset = Review.objects.all() \
         .select_related('consultation') \
         

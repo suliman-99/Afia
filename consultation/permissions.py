@@ -1,21 +1,19 @@
-from rest_framework.permissions import IsAuthenticatedOrReadOnly, SAFE_METHODS
+from resources.permissions import BasePermission
+from Auth.models import User
 
-
-class ConsultationPermission(IsAuthenticatedOrReadOnly):
+class IsConsultationOwner(BasePermission):
     def has_object_permission(self, request, view, obj):
-        if request.method in SAFE_METHODS:
-            return True
-        if request.user in [obj.patient, obj.doctor]:
-            return not obj.done
-        return False
+        return request.user.role == User.ROLE_PATIENT and request.user == obj.patient \
+        or request.user.role == User.ROLE_DOCTOR and request.user == obj.doctor
 
 
-class ReviewPermission(IsAuthenticatedOrReadOnly):
+class IsReviewOwner(BasePermission):
     def has_object_permission(self, request, view, obj):
-        if request.method in SAFE_METHODS:
-            return True
-        if request.user in [obj.consultation.patient, obj.consultation.doctor]:
-            return not obj.done
-        return False
+        return request.user.role == User.ROLE_PATIENT and request.user == obj.consultation.patient \
+        or request.user.role == User.ROLE_DOCTOR and request.user == obj.consultation.doctor
     
     
+class IsNotDoneForUpdate(BasePermission):
+    def has_object_permission(self, request, view, obj):
+        return not (request.method in ['PUT', 'PATCH'] and obj.done)
+
