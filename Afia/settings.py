@@ -61,7 +61,7 @@ INSTALLED_APPS = [
     'seeder',
     'Auth',
     'user_profile',
-    'static',
+    'statics',
     'consultation',
     'advice',
 ]

@@ -1,6 +1,6 @@
 from seeding.seeders import *
 from advice.models import Advice
-from static.models import *
+from statics.models import *
 from seeder.seeders_data import advice, specialization
 
 

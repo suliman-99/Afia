@@ -5,7 +5,7 @@ from django.contrib.auth.hashers import make_password
 from django.contrib.auth.hashers import make_password
 from django.utils import timezone
 from resources.verification import *
-from static.models import *
+from statics.models import *
 
 
 def user_photo_path(user, filename):

@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-from static.models import Specialization
+from statics.models import Specialization
 
 
 User = get_user_model()

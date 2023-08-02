@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from static.serializers import *
+from statics.serializers import *
 from Auth.models import User
 from Auth.response_templates import *
 
