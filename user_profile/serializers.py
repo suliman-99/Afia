@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from resources.response_templates import success_response
 from statics.serializers import *
 from Auth.models import User
 from Auth.response_templates import *
@@ -43,7 +44,7 @@ class PatientProfileSerializer(serializers.ModelSerializer):
     city_id = serializers.IntegerField(write_only=True, allow_null=False)
     
     def to_representation(self, user:User):
-        return UserSerializer(user).data
+        return success_response(UserSerializer(user).data, 'Your profile information has been submitted successfully. Welcome to our platform! now you have full access to our platform\'s features.')
 
 
 class DoctorProfileSerializer(serializers.ModelSerializer):
@@ -81,5 +82,5 @@ class DoctorProfileSerializer(serializers.ModelSerializer):
     specialization_id = serializers.IntegerField(write_only=True, allow_null=False)
     
     def to_representation(self, user:User):
-        return UserSerializer(user).data
+        return success_response(UserSerializer(user).data, 'Your profile information has been submitted successfully. Our admin team will review and approve your profile shortly.')
     
