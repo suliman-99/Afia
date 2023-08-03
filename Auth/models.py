@@ -17,14 +17,17 @@ def user_license_path(user, filename):
 
 
 class UserManager(BaseUserManager):
-    def create_user(self, **data):
-        password = data.pop('password')
-        if data.get('role') == User.ROLE_PATIENT:
-            data['accepted'] = True
-        user = self.create(**data)
+    def create(self, **kwargs):
+        password = kwargs.pop('password')
+        user:User = super().create(**kwargs)
         user.set_password(password)
         user.save()
         return user
+    
+    def create_user(self, **data):
+        if data.get('role') == User.ROLE_PATIENT:
+            data['accepted'] = True
+        return self.create(**data)
 
     def create_superuser(self, email, password):
         return self.create_user(email=email, password=password, is_staff=True, is_superuser=True)
@@ -116,7 +119,7 @@ class User(AbstractUser):
     genetic_disease = models.TextField(null=True, blank=True)
     other_info = models.TextField(null=True, blank=True)
     
-    license = models.ImageField(max_length=500, upload_to=user_photo_path, null=True, blank=True)
+    license = models.ImageField(max_length=500, upload_to=user_license_path, null=True, blank=True)
     available_for_meeting = models.BooleanField(default=False)
     specialization = models.ForeignKey(Specialization, on_delete=models.PROTECT, null=True, blank=True)
 

@@ -7,7 +7,7 @@ def get_verification_code():
     length = 6
     mx = 10**length
     mn = 10**(length-1)
-    return str(secrets.randbelow(mx-mn-1)+mn)
+    return str(secrets.randbelow(mx-mn)+mn)
 
 # -----------------------------------------------------------------------------------------
 
