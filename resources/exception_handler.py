@@ -11,6 +11,7 @@ def message_coordinator(message, field_name):
         .replace('blank', 'null') \
         .replace('may not be null', 'is required') \
         .replace('This', field_name) \
+        .replace("_id", "") \
         .replace("_", " ") \
         .capitalize() \
 
