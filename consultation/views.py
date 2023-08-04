@@ -41,7 +41,7 @@ class ConsultationViewSet(ModelViewSet):
 
 class ReviewViewSet(ModelViewSet):
     permission_classes = [IsAccepted, IsReviewOwner, IsNotDoneForUpdate]
-    filter_backends = [ReviewOwnerFilterBackend]
+    filter_backends = [ReviewOwnerFilterBackend, ReviewConsultationFilterBackend]
     queryset = Review.objects.all() \
         .select_related('consultation') \
         
@@ -58,8 +58,9 @@ class ReviewViewSet(ModelViewSet):
 
     def list(self, request, *args, **kwargs):
         ret = super().list(request, *args, **kwargs)
-        count = Review.objects.all().count()
-        pending_count = Review.objects.filter(done=False).count()
+        queryset = ReviewOwnerFilterBackend().filter_queryset(self.request, self.get_queryset(), self)
+        count = queryset.count()
+        pending_count = queryset.filter(done=False).count()
         data = ret.data
         ret.data = {}
         ret.data['count'] = count
