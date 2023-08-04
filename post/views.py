@@ -6,7 +6,7 @@ from post.serializers import *
 
 class PostViewSet(GenericViewSet, CreateModelMixin, ListModelMixin):
     serializer_class = PostSerializer
-    queryset = Post.objects.prefetch_related('comments')
+    queryset = Post.objects.prefetch_related('comments').order_by('-created_at')
 
 
 class CommentViewSet(GenericViewSet, CreateModelMixin):
