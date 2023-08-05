@@ -1,3 +1,4 @@
+import pandas
 from django.db import models
 from django.conf import settings
 from django.http import HttpRequest
@@ -306,18 +307,16 @@ class CSVFileReader():
         return csv_file_path
     
     def get_data(self):
-        """ Method read the csv_file that is specified by `csv_file_path` and return the `data` that will be seeded """
+        """ Method (using pandas) read the csv_file that is specified by `csv_file_path` and return the `data` that will be seeded """
+
         data = []
         csv_file_path = self._get_csv_file_path()
-        with open(csv_file_path, 'r', encoding='utf-8') as file:
-            labels = []
-            for values in file:
-                values = [value.strip() for value in values.split(',')]
-                if not labels:
-                    labels = values
-                else:
-                    record_data = { label: value for label, value in zip(labels, values) }
-                    data.append(record_data)
+        pandas_file = pandas.read_csv(csv_file_path)
+        for _, row in pandas_file.iterrows():
+            record_data = {}
+            for key, value in row.items():
+                record_data[key] = value
+            data.append(record_data)
         return data
     
     
