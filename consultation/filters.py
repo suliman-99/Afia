@@ -16,7 +16,7 @@ class ReviewOwnerFilterBackend(BaseFilterBackend):
         if request.user.role == User.ROLE_PATIENT:
             return queryset.filter(consultation__patient=request.user)
         if request.user.role == User.ROLE_DOCTOR:
-            return queryset.filter(consultation__docotr=request.user)
+            return queryset.filter(consultation__doctor=request.user)
         return None
 
 
