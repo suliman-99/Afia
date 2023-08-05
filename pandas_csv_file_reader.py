@@ -4,7 +4,7 @@ import pandas as pd
 def get_data():
     data = []
     csv_file_path = 'output.csv'
-    pandas_file = pd.read_csv('output.csv')
+    pandas_file = pd.read_csv(csv_file_path)
     for _, row in pandas_file.iterrows():
         record_data = {}
         for key, value in row.items():
