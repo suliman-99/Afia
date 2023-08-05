@@ -27,9 +27,10 @@ class ConsultationViewSet(ModelViewSet):
 
     def list(self, request, *args, **kwargs):
         ret = super().list(request, *args, **kwargs)
-        count = Consultation.objects.all().count()
-        pending_count = Consultation.objects.filter(done=False).count()
-        have_pending_review_count = Consultation.objects.filter(reviews__done=False).count()
+        queryset = self.filter_queryset(self.get_queryset())
+        count = queryset.count()
+        pending_count = queryset.filter(done=False).count()
+        have_pending_review_count = queryset.filter(reviews__done=False).count()
         data = ret.data
         ret.data = {}
         ret.data['count'] = count
