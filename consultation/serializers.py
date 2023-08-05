@@ -68,7 +68,7 @@ class PatientUpdateConsultationSerializer(serializers.ModelSerializer):
 class DoctorUpdateConsultationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Consultation
-        fields = ['id', 'diagnosis', 'prescription', 'treatment_duration']
+        fields = ['id', 'diagnosis', 'prescription', 'treatment_duration', 'need_review_at']
         extra_kwargs = {
             'diagnosis': { 'required': True, 'allow_null':False, 'allow_blank':False},
             'prescription': { 'required': True, 'allow_null':False, 'allow_blank':False},
@@ -155,7 +155,7 @@ class PatientUpdateReviewSerializer(serializers.ModelSerializer):
 class DoctorUpdateReviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Review
-        fields = ['id', 'diagnosis', 'prescription', 'treatment_duration']
+        fields = ['id', 'diagnosis', 'prescription', 'treatment_duration', 'need_review_at']
         extra_kwargs = {
             'diagnosis': { 'required': True, 'allow_null':False, 'allow_blank':False},
             'prescription': { 'required': True, 'allow_null':False, 'allow_blank':False},
