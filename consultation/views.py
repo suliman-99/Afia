@@ -9,7 +9,7 @@ from consultation.filters import *
 
 
 class ConsultationViewSet(ModelViewSet):
-    permission_classes = [IsAccepted, IsConsultationOwner, IsNotDoneForUpdate]
+    permission_classes = [IsAccepted, IsConsultationOwner, IsNotDoneForPatientUpdate]
     filter_backends = [ConsultationOwnerFilterBackend]
     queryset = Consultation.objects.all() \
         .select_related('patient') \
@@ -42,7 +42,7 @@ class ConsultationViewSet(ModelViewSet):
 
 
 class ReviewViewSet(ModelViewSet):
-    permission_classes = [IsAccepted, IsReviewOwner, IsNotDoneForUpdate]
+    permission_classes = [IsAccepted, IsReviewOwner, IsNotDoneForPatientUpdate]
     filter_backends = [ReviewOwnerFilterBackend, ReviewConsultationFilterBackend]
     queryset = Review.objects.all() \
         .select_related('consultation') \

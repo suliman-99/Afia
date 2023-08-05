@@ -13,7 +13,7 @@ class IsReviewOwner(BasePermission):
         or request.user.role == User.ROLE_DOCTOR and request.user == obj.consultation.doctor
     
     
-class IsNotDoneForUpdate(BasePermission):
+class IsNotDoneForPatientUpdate(BasePermission):
     def has_object_permission(self, request, view, obj):
-        return not (request.method in ['PUT', 'PATCH'] and obj.done)
+        return not (request.method in ['PUT', 'PATCH'] and obj.done and request.user.role == User.ROLE_PATIENT)
 
