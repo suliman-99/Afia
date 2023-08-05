@@ -1,3 +1,4 @@
+from django.utils import timezone
 from rest_framework.viewsets import *
 from rest_framework.mixins import *
 from resources.permissions import *
@@ -30,12 +31,12 @@ class ConsultationViewSet(ModelViewSet):
         queryset = self.filter_queryset(self.get_queryset())
         count = queryset.count()
         pending_count = queryset.filter(done=False).count()
-        have_pending_review_count = queryset.filter(reviews__done=False).count()
+        need_review_count = queryset.filter(need_review_at__gt=timezone.now()).count()
         data = ret.data
         ret.data = {}
         ret.data['count'] = count
         ret.data['pending_count'] = pending_count
-        ret.data['have_pending_review_count'] = have_pending_review_count
+        ret.data['need_review_count'] = need_review_count
         ret.data['data'] = data
         return ret
 
