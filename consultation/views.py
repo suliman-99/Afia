@@ -63,10 +63,12 @@ class ReviewViewSet(ModelViewSet):
         queryset = ReviewOwnerFilterBackend().filter_queryset(self.request, self.get_queryset(), self)
         count = queryset.count()
         pending_count = queryset.filter(done=False).count()
+        need_review_count = queryset.filter(need_review_at__gt=timezone.now()).count()
         data = ret.data
         ret.data = {}
         ret.data['count'] = count
         ret.data['pending_count'] = pending_count
+        ret.data['need_review_count'] = need_review_count
         ret.data['data'] = data
         return ret
 

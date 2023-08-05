@@ -98,6 +98,7 @@ class GetReviewSerializer(serializers.ModelSerializer):
             'diagnosis', 'prescription', 'treatment_duration',
             'created_at', 'done',
             'requester', 'consultation',
+            'need_review_at',
         ]
         
     consultation = GetConsultationSerializer()
@@ -159,6 +160,7 @@ class DoctorUpdateReviewSerializer(serializers.ModelSerializer):
             'diagnosis': { 'required': True, 'allow_null':False, 'allow_blank':False},
             'prescription': { 'required': True, 'allow_null':False, 'allow_blank':False},
             'treatment_duration': { 'required': True, 'allow_null':False, 'allow_blank':False},
+            'need_review_at': { 'required': False },
         }
     
     def update(self, instance, validated_data):

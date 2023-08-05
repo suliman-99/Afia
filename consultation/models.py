@@ -48,3 +48,5 @@ class Review(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     done = models.BooleanField(default=False)
 
+    need_review_at = models.DateField(null=True)
+
