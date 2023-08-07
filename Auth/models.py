@@ -29,10 +29,10 @@ class UserManager(BaseUserManager):
     def create_superuser(self, email, password):
         return self.create_user(email=email, password=password, is_staff=True, is_superuser=True)
     
-    # def bulk_create(self, objs, batch_size=None, ignore_conflicts=True):
-    #     for obj in objs:
-    #         obj.password = make_password(str(obj.password))
-    #     return super().bulk_create(objs, batch_size=batch_size, ignore_conflicts=ignore_conflicts)
+    def bulk_create(self, objs, batch_size=None, ignore_conflicts=True):
+        for obj in objs:
+            obj.password = make_password(str(obj.password))
+        return super().bulk_create(objs, batch_size=batch_size, ignore_conflicts=ignore_conflicts)
 
 class User(AbstractUser):
     objects = UserManager()

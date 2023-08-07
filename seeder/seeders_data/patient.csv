@@ -1,101 +1,101 @@
-gender,first_name,last_name,email,password,phone_number,birth_date,blood_type,length,weight,chronic_disease,genetic_disease,other_info
-1,Judy,Abd Alrahim,JudyAbdAlrahim1@gmail.com,123123,0970730448,1983-2-16,4,174,114,Chronic Kidney Disease,Fragile X Syndrome,"Allergies: Dust Mites, Pollen"
-0,Ismaiel,Abd Alrahim,IsmaielAbdAlrahim2@gmail.com,123123,0959205394,1982-2-3,7,165,102,Parkinsons Disease,Huntingtons Disease,"Allergies: Dust Mites, Pollen"
-1,Raghad,Mahmoud,RaghadMahmoud3@gmail.com,123123,0984107346,1988-12-18,1,180,73,Chronic Migraines,Fragile X Syndrome,"Family History: Hypertension, Stroke"
-1,Batoul,Koja,BatoulKoja4@gmail.com,123123,0969947297,1995-8-27,5,165,93,Alzheimers Disease,Sickle Cell Anemia,"Family History: Hypertension, Stroke"
-0,Ahmad,Mahmoud,AhmadMahmoud5@gmail.com,123123,0965235613,1980-3-18,5,161,89,Rheumatoid Arthritis,Prader-Willi Syndrome,"Family History: Hypertension, Stroke"
-0,Ahmad,Ali,AhmadAli6@gmail.com,123123,0915528547,1981-10-9,6,177,115,Hypertension,Color Blindness,"Family History: Hypertension, Stroke"
-1,Mariam,Mohammad,MariamMohammad7@gmail.com,123123,0952386185,1980-9-27,6,162,67,Heart Disease,Tay-Sachs Disease,"Vaccination History: COVID-19 (Pfizer, 2 doses)"
-1,haifaa,Abd Alrahim,haifaaAbdAlrahim8@gmail.com,123123,0986175412,1983-12-6,3,170,88,Diabetes,Hemophilia,"Family History: Asthma, Allergies"
-0,Ammar,Habib,AmmarHabib9@gmail.com,123123,0948788780,1995-3-4,1,172,106,Crohns Disease,Rett Syndrome,"Family History: Cancer, Alzheimers Disease"
-0,Osama,Abd Almalek,OsamaAbdAlmalek10@gmail.com,123123,0929214430,1984-1-16,1,179,109,Diabetes,Huntingtons Disease,Medications: Levothyroxine
-0,Osama,Awad,OsamaAwad11@gmail.com,123123,0960230551,1984-1-7,0,173,87,Rheumatoid Arthritis,Down Syndrome,"Previous Surgeries: Appendectomy (2015), Tonsillectomy (2008)"
-1,Mariam,Horani,MariamHorani12@gmail.com,123123,0948994422,1991-2-3,6,165,117,Osteoporosis,Hemophilia,Vaccination History: Tetanus-Diphtheria (10 years ago)
-1,Sedra,Halabi,SedraHalabi13@gmail.com,123123,0952008028,1992-6-8,7,175,58,Epilepsy,Polycystic Kidney Disease,Medications: Sertraline
-1,Zainab,Ahmad,ZainabAhmad14@gmail.com,123123,0968102952,1989-1-23,7,166,58,Lupus,Rett Syndrome,Vaccination History: None
-1,Hiba,AlHelo,HibaAlHelo15@gmail.com,123123,0916624729,1989-4-15,6,169,107,Multiple Sclerosis,Rett Syndrome,Vaccination History: Tetanus-Diphtheria (10 years ago)
-0,Fadi,Mahmoud,FadiMahmoud16@gmail.com,123123,0953384936,1989-11-5,4,162,92,Asthma,Klinefelter Syndrome,"Family History: Cancer, Alzheimers Disease"
-0,Saeed,Turkman,SaeedTurkman17@gmail.com,123123,0980996917,1981-5-20,6,172,85,Epilepsy,Marfan Syndrome,Previous Surgeries: None
-0,Mohammad,Shamma,MohammadShamma18@gmail.com,123123,092115747,1994-2-6,6,160,66,Heart Disease,Marfan Syndrome,Vaccination History: Influenza (Yearly)
-1,Zainab,AlMasri,ZainabAlMasri19@gmail.com,123123,0918391913,1994-8-1,6,175,76,Fibromyalgia,Marfan Syndrome,Vaccination History: Tetanus-Diphtheria (10 years ago)
-0,Saeed,Ahmad,SaeedAhmad20@gmail.com,123123,0982670892,1982-11-4,6,178,106,Crohns Disease,Prader-Willi Syndrome,Allergies: None
-0,Abd Allah,Ibrahim,AbdAllahIbrahim21@gmail.com,123123,0987309077,1981-9-5,0,160,58,Hypertension,Rett Syndrome,"Family History: Diabetes, Heart Disease"
-1,Laila,Awad,LailaAwad22@gmail.com,123123,0979770977,1994-12-4,3,169,61,Chronic Obstructive Pulmonary Disease (COPD),Tay-Sachs Disease,Previous Surgeries: Knee Replacement (2019)
-0,Khaled,Kurdi,KhaledKurdi23@gmail.com,123123,0977001273,1989-5-9,0,171,52,Parkinsons Disease,Duchenne Muscular Dystrophy,Previous Surgeries: Gallbladder Removal (2020)
-0,Mazen,Homsi,MazenHomsi24@gmail.com,123123,092663721,1984-5-24,4,171,76,Cancer,Williams Syndrome,Previous Surgeries: Gallbladder Removal (2020)
-0,Issam,Turkman,IssamTurkman25@gmail.com,123123,0944576220,1990-4-12,4,160,65,Epilepsy,Hemophilia,"Family History: Asthma, Allergies"
-0,Abd Alghani,Haj,AbdAlghaniHaj26@gmail.com,123123,0958465287,1992-5-16,4,161,56,Hypertension,Hemophilia,"Vaccination History: COVID-19 (Pfizer, 2 doses)"
-0,Ahmad,Mahmoud,AhmadMahmoud27@gmail.com,123123,0976065462,1993-12-4,4,168,76,Crohns Disease,Hemophilia,Medications: Levothyroxine
-0,Saeed,Ibrahim,SaeedIbrahim28@gmail.com,123123,091190610,1995-12-3,7,163,115,Fibromyalgia,Cystic Fibrosis,Vaccination History: Tetanus-Diphtheria (10 years ago)
-0,Bilal,Ali,BilalAli29@gmail.com,123123,0930952469,1992-5-2,6,179,62,Obesity,Turner Syndrome,Vaccination History: Tetanus-Diphtheria (10 years ago)
-1,haifaa,Halabi,haifaaHalabi30@gmail.com,123123,097381748,1982-1-26,0,174,67,HIV/AIDS,Spinal Muscular Atrophy (SMA),"Family History: Hypertension, Stroke"
-0,Moayyad,Habib,MoayyadHabib31@gmail.com,123123,0995618472,1993-11-15,6,160,85,Chronic Obstructive Pulmonary Disease (COPD),Turner Syndrome,"Family History: Hypertension, Stroke"
-1,Asmaa,Shamma,AsmaaShamma32@gmail.com,123123,0926410942,1994-5-6,5,168,113,Alzheimers Disease,Neurofibromatosis,Vaccination History: Influenza (Yearly)
-0,Suliman,Awad,SulimanAwad33@gmail.com,123123,0988787817,1993-6-26,5,178,97,Hypertension,Hemophilia,"Family History: Cancer, Alzheimers Disease"
-1,Zainab,Ali,ZainabAli34@gmail.com,123123,0964433770,1990-2-22,4,169,72,Cancer,Turner Syndrome,"Family History: Cancer, Alzheimers Disease"
-1,Judy,AlHelo,JudyAlHelo35@gmail.com,123123,0998383250,1980-8-22,5,171,69,Heart Disease,Color Blindness,Previous Surgeries: None
-0,Ismaiel,Horani,IsmaielHorani36@gmail.com,123123,0955474169,1991-4-5,3,177,55,Lupus,Phenylketonuria (PKU),"Vaccination History: COVID-19 (Pfizer, 2 doses)"
-1,Sali,Abd Almalek,SaliAbdAlmalek37@gmail.com,123123,0959682747,1994-6-27,2,167,86,Multiple Sclerosis,Tay-Sachs Disease,"Family History: Diabetes, Heart Disease"
-1,Sedra,AlShami,SedraAlShami38@gmail.com,123123,0925646516,1985-6-13,0,169,105,Multiple Sclerosis,Huntingtons Disease,"Previous Surgeries: Appendectomy (2015), Tonsillectomy (2008)"
-0,Anas,Abd Almalek,AnasAbdAlmalek39@gmail.com,123123,0968497360,1980-6-27,3,180,59,Rheumatoid Arthritis,Marfan Syndrome,Medications: Levothyroxine
-1,Aya,Awad,AyaAwad40@gmail.com,123123,0968342221,1985-6-25,6,163,107,Chronic Kidney Disease,Marfan Syndrome,"Family History: Diabetes, Heart Disease"
-0,Khaled,Mohammad,KhaledMohammad41@gmail.com,123123,0948230993,1986-10-17,2,170,86,Osteoporosis,Spinal Muscular Atrophy (SMA),Previous Surgeries: Gallbladder Removal (2020)
-0,Kamel,Koja,KamelKoja42@gmail.com,123123,0943351952,1993-12-12,0,164,103,Chronic Kidney Disease,Polycystic Kidney Disease,Medications: Levothyroxine
-1,Sali,Horani,SaliHorani43@gmail.com,123123,0941193181,1992-10-14,3,161,67,Heart Disease,Williams Syndrome,"Family History: Asthma, Allergies"
-0,Khaled,Saleh,KhaledSaleh44@gmail.com,123123,0980315871,1990-5-4,4,162,112,Chronic Kidney Disease,Rett Syndrome,"Family History: Asthma, Allergies"
-1,Sali,Abd Almajeed,SaliAbdAlmajeed45@gmail.com,123123,0969566631,1984-1-13,1,164,60,Asthma,Tay-Sachs Disease,Medications: Levothyroxine
-0,Abd Alghani,Awad,AbdAlghaniAwad46@gmail.com,123123,0912527027,1981-10-17,6,176,114,Alzheimers Disease,Hemophilia,Vaccination History: None
-1,Batoul,Horani,BatoulHorani47@gmail.com,123123,0972034809,1986-5-15,6,180,89,Chronic Migraines,Down Syndrome,Vaccination History: None
-0,Bilal,Turkman,BilalTurkman48@gmail.com,123123,0960081495,1995-12-20,1,170,116,Heart Disease,Hemophilia,"Family History: Hypertension, Stroke"
-1,Maya,Awad,MayaAwad49@gmail.com,123123,0928701824,1988-9-23,0,161,107,Lupus,Neurofibromatosis,Previous Surgeries: Gallbladder Removal (2020)
-1,Sara,Horani,SaraHorani50@gmail.com,123123,0976377997,1995-3-25,4,166,115,Crohns Disease,Tay-Sachs Disease,"Family History: Hypertension, Stroke"
-1,Maya,Turkman,MayaTurkman51@gmail.com,123123,0933814143,1995-7-8,7,164,111,Lupus,Muscular Dystrophy,"Family History: Cancer, Alzheimers Disease"
-0,Mazen,Koja,MazenKoja52@gmail.com,123123,0918288845,1985-7-13,2,172,117,Epilepsy,Turner Syndrome,Allergies: None
-0,Khaled,Shamma,KhaledShamma53@gmail.com,123123,0976451094,1990-4-7,3,170,72,Chronic Kidney Disease,Phenylketonuria (PKU),Previous Surgeries: Knee Replacement (2019)
-1,Sara,Homsi,SaraHomsi54@gmail.com,123123,0961523781,1981-11-19,4,166,57,Heart Disease,Cystic Fibrosis,Medications: Sertraline
-0,Anas,AlHelo,AnasAlHelo55@gmail.com,123123,0941363781,1983-1-16,2,179,101,Asthma,Hemophilia,"Family History: Asthma, Allergies"
-1,Asmaa,AlShami,AsmaaAlShami56@gmail.com,123123,0986376683,1988-8-28,3,172,59,Hypertension,Williams Syndrome,Previous Surgeries: Gallbladder Removal (2020)
-1,Asmaa,Zarefa,AsmaaZarefa57@gmail.com,123123,0978401432,1980-1-11,0,176,73,Obesity,Fragile X Syndrome,Vaccination History: Influenza (Yearly)
-1,Nour,AlShami,NourAlShami58@gmail.com,123123,0984690404,1992-9-10,7,179,107,HIV/AIDS,Tay-Sachs Disease,Vaccination History: None
-0,Fadi,Habib,FadiHabib59@gmail.com,123123,0993143438,1991-1-13,7,176,93,Arthritis,Hemophilia,Allergies: Shellfish
-0,Munzer,Homsi,MunzerHomsi60@gmail.com,123123,0923015513,1990-10-7,7,163,116,Asthma,Hemophilia,Previous Surgeries: Gallbladder Removal (2020)
-0,Ahmad,Shamma,AhmadShamma61@gmail.com,123123,0919608417,1985-7-4,1,166,92,Crohns Disease,Marfan Syndrome,Medications: Sertraline
-0,Fadi,Mohammad,FadiMohammad62@gmail.com,123123,0940319936,1980-9-24,5,178,75,Obesity,Rett Syndrome,"Allergies: Dust Mites, Pollen"
-0,Ammar,Shamma,AmmarShamma63@gmail.com,123123,092081208,1982-12-1,4,162,107,Arthritis,Tay-Sachs Disease,Previous Surgeries: None
-1,Sara,Awad,SaraAwad64@gmail.com,123123,0930263784,1990-9-24,4,172,96,Chronic Obstructive Pulmonary Disease (COPD),Williams Syndrome,"Vaccination History: COVID-19 (Pfizer, 2 doses)"
-0,Mahmoud,Ahmad,MahmoudAhmad65@gmail.com,123123,0922083397,1983-10-27,1,165,54,Chronic Kidney Disease,Prader-Willi Syndrome,Medications: Levothyroxine
-1,Sedra,Haj,SedraHaj66@gmail.com,123123,0949828086,1982-6-5,2,168,97,Multiple Sclerosis,Marfan Syndrome,"Allergies: Penicillin, Peanuts"
-0,Khaled,Zarefa,KhaledZarefa67@gmail.com,123123,0983340177,1984-3-5,0,172,95,Epilepsy,Fragile X Syndrome,"Vaccination History: COVID-19 (Pfizer, 2 doses)"
-1,Reem,Awad,ReemAwad68@gmail.com,123123,0998611005,1983-12-23,4,166,110,Chronic Migraines,Down Syndrome,"Allergies: Penicillin, Peanuts"
-0,Issam,AlMasri,IssamAlMasri69@gmail.com,123123,0936045171,1994-9-11,7,175,76,Heart Disease,Williams Syndrome,Allergies: Shellfish
-0,Mohammad,Ali,MohammadAli70@gmail.com,123123,0989276696,1987-4-28,2,179,93,Epilepsy,Down Syndrome,"Allergies: Dust Mites, Pollen"
-0,Ahmad,Horani,AhmadHorani71@gmail.com,123123,0918135955,1988-10-22,5,174,72,Alzheimers Disease,Muscular Dystrophy,Medications: None
-1,Laila,Ibrahim,LailaIbrahim72@gmail.com,123123,0995118226,1994-12-12,5,174,85,Fibromyalgia,Hemophilia,"Allergies: Penicillin, Peanuts"
-1,Maya,Abd Almalek,MayaAbdAlmalek73@gmail.com,123123,0936252086,1980-4-7,5,165,61,Cancer,Spinal Muscular Atrophy (SMA),Allergies: None
-1,Maya,Zarefa,MayaZarefa74@gmail.com,123123,0913759160,1992-1-26,5,164,84,Diabetes,Spinal Muscular Atrophy (SMA),Medications: Sertraline
-0,Moayyad,Ibrahim,MoayyadIbrahim75@gmail.com,123123,0970483537,1982-11-22,2,177,75,Chronic Obstructive Pulmonary Disease (COPD),Marfan Syndrome,"Medications: Lisinopril, Metformin"
-1,Mariam,Homsi,MariamHomsi76@gmail.com,123123,0941557651,1994-6-10,7,179,53,Osteoporosis,Duchenne Muscular Dystrophy,Medications: Sertraline
-0,Ahmad,AlShami,AhmadAlShami77@gmail.com,123123,092311219,1992-1-19,5,171,103,Fibromyalgia,Polycystic Kidney Disease,"Family History: Hypertension, Stroke"
-1,Lilian,Kurdi,LilianKurdi78@gmail.com,123123,0986465197,1985-7-28,0,170,66,Osteoporosis,Marfan Syndrome,"Allergies: Penicillin, Peanuts"
-0,Ammar,Awad,AmmarAwad79@gmail.com,123123,0924838605,1981-12-4,0,179,118,Parkinsons Disease,Klinefelter Syndrome,"Vaccination History: COVID-19 (Pfizer, 2 doses)"
-1,Nour,Koja,NourKoja80@gmail.com,123123,0947958052,1986-5-24,5,176,120,Arthritis,Down Syndrome,"Allergies: Dust Mites, Pollen"
-0,Issam,Saleh,IssamSaleh81@gmail.com,123123,095176335,1995-10-11,5,172,74,Osteoporosis,Klinefelter Syndrome,Medications: None
-1,Maya,AlMasri,MayaAlMasri82@gmail.com,123123,0955369214,1990-9-28,0,161,106,Hypertension,Polycystic Kidney Disease,Previous Surgeries: None
-0,Ammar,Abd Almalek,AmmarAbdAlmalek83@gmail.com,123123,0955384811,1988-7-28,0,164,62,Parkinsons Disease,Klinefelter Syndrome,"Medications: Lisinopril, Metformin"
-1,Ghofran,Mahmoud,GhofranMahmoud84@gmail.com,123123,0970285307,1995-4-14,6,174,70,Parkinsons Disease,Williams Syndrome,Vaccination History: None
-0,Issam,Turkman,IssamTurkman85@gmail.com,123123,0988851190,1994-7-18,4,162,103,Chronic Kidney Disease,Klinefelter Syndrome,Previous Surgeries: Knee Replacement (2019)
-0,Abd Allah,Awad,AbdAllahAwad86@gmail.com,123123,0979746597,1986-12-14,6,161,103,Hypertension,Fragile X Syndrome,Medications: Sertraline
-0,Suliman,Zarefa,SulimanZarefa87@gmail.com,123123,0978971876,1993-12-6,6,180,91,Chronic Obstructive Pulmonary Disease (COPD),Hemophilia,Previous Surgeries: None
-0,Ammar,AlShami,AmmarAlShami88@gmail.com,123123,0954723665,1995-10-16,6,166,100,Cancer,Neurofibromatosis,Medications: None
-1,Asmaa,Mohammad,AsmaaMohammad89@gmail.com,123123,0960315156,1995-11-10,4,166,55,Crohns Disease,Klinefelter Syndrome,Allergies: None
-0,Mazen,Mohammad,MazenMohammad90@gmail.com,123123,0983602760,1987-8-27,3,174,94,Obesity,Turner Syndrome,"Family History: Hypertension, Stroke"
-1,Reem,Awad,ReemAwad91@gmail.com,123123,0971681550,1985-3-12,1,168,67,Chronic Migraines,Color Blindness,"Family History: Hypertension, Stroke"
-0,Mohammad,Shamma,MohammadShamma92@gmail.com,123123,0916683422,1994-1-24,0,164,113,Osteoporosis,Neurofibromatosis,Medications: Sertraline
-0,Abd Alrahman,Abd Almajeed,AbdAlrahmanAbdAlmajeed93@gmail.com,123123,099106464,1990-2-9,7,172,101,Fibromyalgia,Huntingtons Disease,Previous Surgeries: None
-1,Layan,Abd Alrahim,LayanAbdAlrahim94@gmail.com,123123,0933449745,1982-1-3,3,165,95,Crohns Disease,Hemophilia,Previous Surgeries: None
-1,Maya,Abd Almalek,MayaAbdAlmalek95@gmail.com,123123,0992508361,1994-11-26,0,166,115,Obesity,Turner Syndrome,Vaccination History: Influenza (Yearly)
-0,Issam,Koja,IssamKoja96@gmail.com,123123,0960323070,1983-2-18,7,161,120,Rheumatoid Arthritis,Rett Syndrome,Allergies: None
-1,Hiba,AlHelo,HibaAlHelo97@gmail.com,123123,0992301197,1993-10-1,2,171,83,Fibromyalgia,Spinal Muscular Atrophy (SMA),Previous Surgeries: Knee Replacement (2019)
-1,Judy,Halabi,JudyHalabi98@gmail.com,123123,0935034594,1988-6-5,3,163,113,Heart Disease,Duchenne Muscular Dystrophy,"Vaccination History: COVID-19 (Pfizer, 2 doses)"
-0,Saeed,Awad,SaeedAwad99@gmail.com,123123,0922016204,1989-12-9,0,162,119,Obesity,Spinal Muscular Atrophy (SMA),"Family History: Cancer, Alzheimers Disease"
-1,Sedra,Abd Alrahim,SedraAbdAlrahim100@gmail.com,123123,0961127334,1986-5-6,0,171,52,Epilepsy,Phenylketonuria (PKU),"Family History: Hypertension, Stroke"
+gender,first_name,last_name,email,password,phone_number,birth_date,blood_type,length,weight,chronic_disease,genetic_disease,other_info,role,accepted
+1,haifaa,Zarefa,haifaaZarefa1@gmail.com,123123,0927456342,1985-9-25,7,176,94,HIV/AIDS,Down Syndrome,Vaccination History: Influenza (Yearly),1,True
+1,Zainab,Ibrahim,ZainabIbrahim2@gmail.com,123123,0926468900,1995-5-21,2,174,108,Obesity,Duchenne Muscular Dystrophy,Vaccination History: None,1,True
+1,Fatema,Mahmoud,FatemaMahmoud3@gmail.com,123123,0974402719,1982-8-15,0,163,101,Multiple Sclerosis,Huntingtons Disease,"Family History: Diabetes, Heart Disease",1,True
+1,Zainab,Abd Almajeed,ZainabAbdAlmajeed4@gmail.com,123123,0952449267,1988-3-7,5,174,71,Lupus,Klinefelter Syndrome,Medications: None,1,True
+1,Sali,Haj,SaliHaj5@gmail.com,123123,0952375090,1994-6-23,0,179,74,Obesity,Williams Syndrome,"Family History: Hypertension, Stroke",1,True
+0,Mahmoud,Abd Alrahim,MahmoudAbdAlrahim6@gmail.com,123123,0996993242,1983-8-4,2,169,81,Lupus,Fragile X Syndrome,Medications: None,1,True
+0,Mohammad,Saleh,MohammadSaleh7@gmail.com,123123,0945459418,1995-12-13,5,178,58,Epilepsy,Fragile X Syndrome,"Family History: Asthma, Allergies",1,True
+0,Abd Allah,AlHelo,AbdAllahAlHelo8@gmail.com,123123,0967620633,1986-9-27,7,176,103,Fibromyalgia,Hemophilia,Vaccination History: None,1,True
+1,Laila,AlShami,LailaAlShami9@gmail.com,123123,0969888931,1985-11-9,6,173,50,Parkinsons Disease,Spinal Muscular Atrophy (SMA),"Family History: Diabetes, Heart Disease",1,True
+1,Maya,Ibrahim,MayaIbrahim10@gmail.com,123123,092498547,1989-3-12,2,166,103,Lupus,Cystic Fibrosis,"Previous Surgeries: Appendectomy (2015), Tonsillectomy (2008)",1,True
+0,Khaled,AlShami,KhaledAlShami11@gmail.com,123123,0945836972,1989-9-22,7,178,64,Alzheimers Disease,Marfan Syndrome,Allergies: Shellfish,1,True
+0,Khaled,Halabi,KhaledHalabi12@gmail.com,123123,0962234277,1983-8-11,7,173,106,HIV/AIDS,Neurofibromatosis,"Vaccination History: COVID-19 (Pfizer, 2 doses)",1,True
+1,Hiba,Horani,HibaHorani13@gmail.com,123123,0925791426,1990-9-24,1,165,98,Chronic Kidney Disease,Cystic Fibrosis,"Medications: Lisinopril, Metformin",1,True
+1,Lilian,Turkman,LilianTurkman14@gmail.com,123123,0944722420,1981-10-24,7,171,70,Chronic Kidney Disease,Duchenne Muscular Dystrophy,Previous Surgeries: Knee Replacement (2019),1,True
+1,Fatema,Halabi,FatemaHalabi15@gmail.com,123123,0958033857,1985-8-6,6,169,89,Fibromyalgia,Phenylketonuria (PKU),Medications: Sertraline,1,True
+0,Ismaiel,Haj,IsmaielHaj16@gmail.com,123123,0946021837,1983-5-2,2,171,57,Multiple Sclerosis,Down Syndrome,"Allergies: Dust Mites, Pollen",1,True
+1,Sali,Saleh,SaliSaleh17@gmail.com,123123,098656148,1992-11-6,7,168,62,Obesity,Marfan Syndrome,"Allergies: Dust Mites, Pollen",1,True
+1,Layan,Haj,LayanHaj18@gmail.com,123123,0980418364,1991-12-22,7,174,54,Heart Disease,Hemophilia,Medications: Levothyroxine,1,True
+0,Kamel,Turkman,KamelTurkman19@gmail.com,123123,0956426200,1994-12-11,3,172,74,Fibromyalgia,Klinefelter Syndrome,Allergies: Shellfish,1,True
+1,Mariam,Turkman,MariamTurkman20@gmail.com,123123,092761139,1992-8-4,7,165,104,Chronic Kidney Disease,Prader-Willi Syndrome,Previous Surgeries: Gallbladder Removal (2020),1,True
+0,Anas,Abd Almajeed,AnasAbdAlmajeed21@gmail.com,123123,0974303820,1983-12-12,4,179,103,Chronic Migraines,Tay-Sachs Disease,Vaccination History: Influenza (Yearly),1,True
+1,Hiba,AlHelo,HibaAlHelo22@gmail.com,123123,096894179,1988-6-3,4,169,117,Arthritis,Down Syndrome,"Allergies: Dust Mites, Pollen",1,True
+1,Maya,Kurdi,MayaKurdi23@gmail.com,123123,0970353110,1986-6-18,5,168,83,Alzheimers Disease,Williams Syndrome,"Allergies: Dust Mites, Pollen",1,True
+1,Aya,Horani,AyaHorani24@gmail.com,123123,0965247717,1994-7-26,7,161,73,Hypertension,Marfan Syndrome,"Family History: Hypertension, Stroke",1,True
+0,Moayyad,Halabi,MoayyadHalabi25@gmail.com,123123,0912091863,1989-8-11,4,168,82,Obesity,Phenylketonuria (PKU),Previous Surgeries: None,1,True
+1,Layan,Abd Almajeed,LayanAbdAlmajeed26@gmail.com,123123,0994527594,1981-3-8,2,176,99,Chronic Obstructive Pulmonary Disease (COPD),Polycystic Kidney Disease,Allergies: Shellfish,1,True
+1,Raghad,Shamma,RaghadShamma27@gmail.com,123123,0929693992,1993-10-13,0,161,94,Crohns Disease,Polycystic Kidney Disease,"Family History: Cancer, Alzheimers Disease",1,True
+0,Moayyad,Abd Almalek,MoayyadAbdAlmalek28@gmail.com,123123,0923538651,1980-12-16,5,168,94,Arthritis,Klinefelter Syndrome,Allergies: Shellfish,1,True
+0,Ammar,Abd Almalek,AmmarAbdAlmalek29@gmail.com,123123,0928270627,1984-5-17,7,165,91,Obesity,Muscular Dystrophy,Previous Surgeries: Knee Replacement (2019),1,True
+1,Maya,Abd Almajeed,MayaAbdAlmajeed30@gmail.com,123123,0992044652,1983-10-14,6,171,115,Crohns Disease,Neurofibromatosis,"Family History: Cancer, Alzheimers Disease",1,True
+0,Mahmoud,Abd Almalek,MahmoudAbdAlmalek31@gmail.com,123123,0949057487,1984-4-13,0,172,58,Chronic Migraines,Neurofibromatosis,Previous Surgeries: Gallbladder Removal (2020),1,True
+0,Abd Allah,Halabi,AbdAllahHalabi32@gmail.com,123123,097290012,1986-10-10,2,177,69,HIV/AIDS,Fragile X Syndrome,Vaccination History: None,1,True
+0,Khaled,Shamma,KhaledShamma33@gmail.com,123123,0952699155,1989-5-16,4,177,115,Lupus,Hemophilia,"Family History: Cancer, Alzheimers Disease",1,True
+0,Issam,Ibrahim,IssamIbrahim34@gmail.com,123123,0922331924,1992-8-11,5,167,88,Rheumatoid Arthritis,Sickle Cell Anemia,Vaccination History: Influenza (Yearly),1,True
+0,Issam,Habib,IssamHabib35@gmail.com,123123,0981156687,1989-12-28,2,174,74,Obesity,Spinal Muscular Atrophy (SMA),Previous Surgeries: Gallbladder Removal (2020),1,True
+1,Lilian,Mohammad,LilianMohammad36@gmail.com,123123,0987000478,1984-10-20,0,171,50,Rheumatoid Arthritis,Duchenne Muscular Dystrophy,"Allergies: Dust Mites, Pollen",1,True
+0,Ahmad,Habib,AhmadHabib37@gmail.com,123123,0996351669,1987-8-20,0,177,110,Crohns Disease,Down Syndrome,"Family History: Asthma, Allergies",1,True
+0,Saeed,Halabi,SaeedHalabi38@gmail.com,123123,099680619,1990-6-28,6,171,56,Fibromyalgia,Down Syndrome,"Family History: Asthma, Allergies",1,True
+0,Munzer,Zarefa,MunzerZarefa39@gmail.com,123123,098920577,1995-5-23,3,178,76,Crohns Disease,Prader-Willi Syndrome,Medications: Sertraline,1,True
+1,Maya,Mahmoud,MayaMahmoud40@gmail.com,123123,0933908636,1983-1-14,4,177,97,Cancer,Fragile X Syndrome,Vaccination History: Influenza (Yearly),1,True
+0,Mazen,Awad,MazenAwad41@gmail.com,123123,0916281834,1991-11-6,1,169,100,Fibromyalgia,Tay-Sachs Disease,Vaccination History: Tetanus-Diphtheria (10 years ago),1,True
+0,Osama,AlShami,OsamaAlShami42@gmail.com,123123,0931950231,1987-3-12,2,164,98,Obesity,Huntingtons Disease,"Previous Surgeries: Appendectomy (2015), Tonsillectomy (2008)",1,True
+1,Hiba,Koja,HibaKoja43@gmail.com,123123,0929828424,1983-6-2,6,167,83,Osteoporosis,Rett Syndrome,Medications: Sertraline,1,True
+1,Ghofran,Koja,GhofranKoja44@gmail.com,123123,0929263144,1983-11-17,5,168,68,Obesity,Down Syndrome,"Previous Surgeries: Appendectomy (2015), Tonsillectomy (2008)",1,True
+1,Lilian,Abd Alrahim,LilianAbdAlrahim45@gmail.com,123123,0917669071,1987-6-28,0,173,116,Parkinsons Disease,Klinefelter Syndrome,Medications: Levothyroxine,1,True
+0,Ammar,Abd Almajeed,AmmarAbdAlmajeed46@gmail.com,123123,093694490,1992-8-22,7,168,57,Chronic Kidney Disease,Tay-Sachs Disease,"Vaccination History: COVID-19 (Pfizer, 2 doses)",1,True
+0,Suliman,Koja,SulimanKoja47@gmail.com,123123,0949510930,1992-10-26,6,164,67,Arthritis,Fragile X Syndrome,Previous Surgeries: Gallbladder Removal (2020),1,True
+0,Suliman,Turkman,SulimanTurkman48@gmail.com,123123,0947677476,1982-9-1,7,175,106,Asthma,Marfan Syndrome,Allergies: None,1,True
+0,Mohammad,Abd Almajeed,MohammadAbdAlmajeed49@gmail.com,123123,0967061634,1989-5-18,0,174,115,Chronic Migraines,Down Syndrome,Allergies: None,1,True
+1,Reem,AlShami,ReemAlShami50@gmail.com,123123,0956858808,1989-12-15,6,171,50,Chronic Kidney Disease,Marfan Syndrome,Vaccination History: None,1,True
+1,Judy,Haj,JudyHaj51@gmail.com,123123,0938878554,1995-3-19,0,160,113,Epilepsy,Marfan Syndrome,Previous Surgeries: Gallbladder Removal (2020),1,True
+1,Layan,Ibrahim,LayanIbrahim52@gmail.com,123123,0912141436,1991-5-28,7,168,76,Chronic Obstructive Pulmonary Disease (COPD),Fragile X Syndrome,"Family History: Cancer, Alzheimers Disease",1,True
+1,Laila,AlHelo,LailaAlHelo53@gmail.com,123123,0915609683,1987-3-6,0,175,69,Chronic Kidney Disease,Huntingtons Disease,"Family History: Asthma, Allergies",1,True
+0,Ahmad,AlMasri,AhmadAlMasri54@gmail.com,123123,0995300992,1992-4-24,3,168,58,Chronic Kidney Disease,Rett Syndrome,"Allergies: Dust Mites, Pollen",1,True
+0,Mazen,Koja,MazenKoja55@gmail.com,123123,0997556021,1981-2-22,0,172,78,Chronic Migraines,Phenylketonuria (PKU),Vaccination History: Tetanus-Diphtheria (10 years ago),1,True
+1,Fatema,Awad,FatemaAwad56@gmail.com,123123,0989130073,1991-3-19,1,173,114,HIV/AIDS,Muscular Dystrophy,Medications: None,1,True
+0,Abd Alghani,Haj,AbdAlghaniHaj57@gmail.com,123123,0912793278,1989-7-15,0,172,120,Cancer,Phenylketonuria (PKU),Vaccination History: None,1,True
+0,Ammar,Ali,AmmarAli58@gmail.com,123123,094151752,1980-5-14,6,179,77,Osteoporosis,Tay-Sachs Disease,Medications: None,1,True
+0,Moayyad,Mahmoud,MoayyadMahmoud59@gmail.com,123123,096415705,1994-12-11,0,163,120,Epilepsy,Duchenne Muscular Dystrophy,Medications: Sertraline,1,True
+1,haifaa,Abd Alrahim,haifaaAbdAlrahim60@gmail.com,123123,0914945477,1981-9-7,4,177,96,Chronic Obstructive Pulmonary Disease (COPD),Down Syndrome,Previous Surgeries: Gallbladder Removal (2020),1,True
+0,Abd Alrahman,Abd Almalek,AbdAlrahmanAbdAlmalek61@gmail.com,123123,0967012447,1983-3-13,5,169,92,Obesity,Phenylketonuria (PKU),"Family History: Diabetes, Heart Disease",1,True
+0,Issam,Mahmoud,IssamMahmoud62@gmail.com,123123,0961141703,1988-11-6,0,168,56,Fibromyalgia,Hemophilia,"Family History: Cancer, Alzheimers Disease",1,True
+0,Suliman,Turkman,SulimanTurkman63@gmail.com,123123,0975506540,1985-4-22,3,178,53,HIV/AIDS,Phenylketonuria (PKU),"Family History: Hypertension, Stroke",1,True
+0,Munzer,Shamma,MunzerShamma64@gmail.com,123123,0965527855,1993-10-3,7,175,108,Parkinsons Disease,Down Syndrome,Vaccination History: Influenza (Yearly),1,True
+0,Ahmad,Abd Almalek,AhmadAbdAlmalek65@gmail.com,123123,096346980,1984-5-27,3,180,67,Lupus,Polycystic Kidney Disease,Vaccination History: Tetanus-Diphtheria (10 years ago),1,True
+0,Mustafa,Turkman,MustafaTurkman66@gmail.com,123123,0991796013,1986-5-15,2,166,105,Asthma,Neurofibromatosis,"Family History: Hypertension, Stroke",1,True
+1,Laila,Habib,LailaHabib67@gmail.com,123123,0969012317,1991-1-23,3,168,114,Asthma,Tay-Sachs Disease,"Previous Surgeries: Appendectomy (2015), Tonsillectomy (2008)",1,True
+0,Issam,AlMasri,IssamAlMasri68@gmail.com,123123,0972793261,1987-9-13,2,178,94,Cancer,Fragile X Syndrome,Allergies: Shellfish,1,True
+0,Mahmoud,Zarefa,MahmoudZarefa69@gmail.com,123123,0926480900,1983-4-13,7,166,61,Heart Disease,Muscular Dystrophy,Vaccination History: Influenza (Yearly),1,True
+0,Abd Alrahman,Haj,AbdAlrahmanHaj70@gmail.com,123123,0986781149,1980-3-15,3,160,67,Osteoporosis,Turner Syndrome,Allergies: Shellfish,1,True
+0,Mazen,Zarefa,MazenZarefa71@gmail.com,123123,095559428,1991-4-23,0,178,106,Epilepsy,Spinal Muscular Atrophy (SMA),"Allergies: Penicillin, Peanuts",1,True
+0,Ismaiel,Haj,IsmaielHaj72@gmail.com,123123,0927336533,1987-4-3,3,162,97,Chronic Obstructive Pulmonary Disease (COPD),Cystic Fibrosis,Allergies: Shellfish,1,True
+0,Saeed,Shamma,SaeedShamma73@gmail.com,123123,0932095843,1992-12-11,2,179,76,Obesity,Williams Syndrome,Vaccination History: None,1,True
+0,Ammar,Horani,AmmarHorani74@gmail.com,123123,0969941094,1990-2-26,2,176,111,Heart Disease,Klinefelter Syndrome,"Family History: Asthma, Allergies",1,True
+0,Issam,Kurdi,IssamKurdi75@gmail.com,123123,0945846576,1994-12-10,2,178,113,Epilepsy,Duchenne Muscular Dystrophy,Allergies: Shellfish,1,True
+0,Ammar,Habib,AmmarHabib76@gmail.com,123123,0959920533,1995-1-24,5,176,92,Chronic Kidney Disease,Neurofibromatosis,Medications: None,1,True
+1,Lilian,AlMasri,LilianAlMasri77@gmail.com,123123,09521373,1993-11-23,5,170,118,Cancer,Neurofibromatosis,"Family History: Hypertension, Stroke",1,True
+1,Judy,AlHelo,JudyAlHelo78@gmail.com,123123,0979971696,1980-5-9,3,168,114,Chronic Kidney Disease,Sickle Cell Anemia,Medications: Levothyroxine,1,True
+1,Sedra,AlShami,SedraAlShami79@gmail.com,123123,0941021683,1994-11-17,4,165,99,Hypertension,Polycystic Kidney Disease,"Vaccination History: COVID-19 (Pfizer, 2 doses)",1,True
+1,Zainab,AlMasri,ZainabAlMasri80@gmail.com,123123,0923156531,1981-5-28,5,173,97,Osteoporosis,Klinefelter Syndrome,"Family History: Diabetes, Heart Disease",1,True
+1,Asmaa,Saleh,AsmaaSaleh81@gmail.com,123123,0987631266,1980-11-22,7,173,117,Crohns Disease,Marfan Syndrome,Previous Surgeries: None,1,True
+0,Bilal,Abd Alrahim,BilalAbdAlrahim82@gmail.com,123123,0993581190,1986-7-11,5,161,66,Multiple Sclerosis,Klinefelter Syndrome,"Family History: Asthma, Allergies",1,True
+0,Anas,Horani,AnasHorani83@gmail.com,123123,0941083344,1985-10-1,4,168,84,Chronic Migraines,Williams Syndrome,"Allergies: Penicillin, Peanuts",1,True
+0,Kamel,Abd Almalek,KamelAbdAlmalek84@gmail.com,123123,0921240548,1993-8-15,1,176,108,Asthma,Phenylketonuria (PKU),"Family History: Asthma, Allergies",1,True
+1,Ghofran,AlMasri,GhofranAlMasri85@gmail.com,123123,0943690711,1986-1-2,4,162,55,Obesity,Williams Syndrome,Vaccination History: Influenza (Yearly),1,True
+1,Reem,Mohammad,ReemMohammad86@gmail.com,123123,0969269944,1993-4-15,2,169,50,Epilepsy,Duchenne Muscular Dystrophy,Medications: Sertraline,1,True
+0,Bilal,Ahmad,BilalAhmad87@gmail.com,123123,0915431489,1987-11-11,4,161,106,Osteoporosis,Cystic Fibrosis,Vaccination History: Tetanus-Diphtheria (10 years ago),1,True
+0,Mahmoud,Awad,MahmoudAwad88@gmail.com,123123,0956131902,1990-3-7,0,180,117,Epilepsy,Sickle Cell Anemia,"Allergies: Dust Mites, Pollen",1,True
+1,Batoul,Shamma,BatoulShamma89@gmail.com,123123,0966267763,1995-10-16,6,168,78,Lupus,Spinal Muscular Atrophy (SMA),Allergies: None,1,True
+1,Sara,Ibrahim,SaraIbrahim90@gmail.com,123123,0942569866,1990-12-28,4,179,80,Cancer,Turner Syndrome,"Allergies: Dust Mites, Pollen",1,True
+1,Lilian,Shamma,LilianShamma91@gmail.com,123123,0984237849,1987-12-15,3,163,93,Parkinsons Disease,Phenylketonuria (PKU),Allergies: Shellfish,1,True
+0,Ahmad,Ali,AhmadAli92@gmail.com,123123,0972875704,1981-5-5,5,176,86,Chronic Migraines,Fragile X Syndrome,Previous Surgeries: Gallbladder Removal (2020),1,True
+0,Mazen,Kurdi,MazenKurdi93@gmail.com,123123,0923455860,1986-2-9,7,168,88,Rheumatoid Arthritis,Tay-Sachs Disease,"Family History: Cancer, Alzheimers Disease",1,True
+1,Reem,Mohammad,ReemMohammad94@gmail.com,123123,0949923323,1982-5-23,5,176,109,Osteoporosis,Neurofibromatosis,"Allergies: Penicillin, Peanuts",1,True
+1,Layan,Shamma,LayanShamma95@gmail.com,123123,0934487547,1988-11-24,4,166,63,Chronic Migraines,Neurofibromatosis,"Family History: Cancer, Alzheimers Disease",1,True
+0,Ismaiel,Ahmad,IsmaielAhmad96@gmail.com,123123,0988467491,1991-5-10,2,174,115,Chronic Migraines,Klinefelter Syndrome,Previous Surgeries: None,1,True
+0,Khaled,Zarefa,KhaledZarefa97@gmail.com,123123,0920863928,1981-6-23,0,179,107,Parkinsons Disease,Turner Syndrome,"Family History: Diabetes, Heart Disease",1,True
+0,Khaled,Mahmoud,KhaledMahmoud98@gmail.com,123123,093410895,1989-9-13,3,173,59,Arthritis,Spinal Muscular Atrophy (SMA),Medications: None,1,True
+0,Abd Allah,Koja,AbdAllahKoja99@gmail.com,123123,0976016578,1983-2-21,5,176,93,Osteoporosis,Duchenne Muscular Dystrophy,Previous Surgeries: Knee Replacement (2019),1,True
+1,haifaa,Turkman,haifaaTurkman100@gmail.com,123123,0920306353,1994-4-25,0,166,119,Asthma,Sickle Cell Anemia,Allergies: None,1,True

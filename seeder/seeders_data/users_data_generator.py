@@ -234,6 +234,8 @@ def get_password():
 superuser_data = {}
 superuser_data['email'] = [get_email('suliman', '', ''), get_email('saeed', '', '')]
 superuser_data['password'] = [get_password(), get_password()]
+superuser_data['is_staff'] = [True, True]
+superuser_data['is_superuser'] = [True, True]
 superuser_file = pandas.DataFrame(superuser_data)
 superuser_file.to_csv('superuser.csv', index=False)
 
@@ -253,6 +255,8 @@ patient_data['weight'] = []
 patient_data['chronic_disease'] = []
 patient_data['genetic_disease'] = []
 patient_data['other_info'] = []
+patient_data['role'] = []
+patient_data['accepted'] = []
 for i in range(100):
     gender = get_gender()
     first_name = get_first_name(gender)
@@ -271,6 +275,8 @@ for i in range(100):
     patient_data['chronic_disease'].append(get_chronic_disease())
     patient_data['genetic_disease'].append(get_genetic_disease())
     patient_data['other_info'].append(get_other_infos())
+    patient_data['role'].append(1)
+    patient_data['accepted'].append(True)
 patient_file = pandas.DataFrame(patient_data)
 patient_file.to_csv('patient.csv', index=False)
 
@@ -283,6 +289,8 @@ doctor_data['password'] = []
 doctor_data['phone_number'] = []
 doctor_data['birth_date'] = []
 doctor_data['available_for_meeting'] = []
+doctor_data['role'] = []
+doctor_data['accepted'] = []
 for i in range(100):
     gender = get_gender()
     first_name = get_first_name(gender)
@@ -296,5 +304,7 @@ for i in range(100):
     doctor_data['phone_number'].append(get_phone_number())
     doctor_data['birth_date'].append(get_birth_date())
     doctor_data['available_for_meeting'].append(get_available_for_meeting())
+    doctor_data['role'].append(0)
+    doctor_data['accepted'].append(True)
 doctor_file = pandas.DataFrame(doctor_data)
 doctor_file.to_csv('doctor.csv', index=False)

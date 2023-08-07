@@ -37,24 +37,24 @@ class CitySeeder(CSVFileModelSeeder):
 
 
 @SeederRegistry.register
-class SuperuserSeeder(CSVFileSerializerSeeder):
-    serializer_class = SuperuserSeederSerializer
+class SuperuserSeeder(CSVFileModelSeeder):
+    model = User
     csv_file_path = 'seeder/seeders_data/superuser.csv'
     priority = 0
     id = 'SuperuserSeeder'
 
 
 @SeederRegistry.register
-class DoctorSeeder(CSVFileSerializerSeeder):
-    serializer_class = DoctorSeederSerializer
+class DoctorSeeder(CSVFileModelSeeder):
+    model = User
     csv_file_path = 'seeder/seeders_data/doctor.csv'
     priority = 2
     id = 'DoctorSeeder'
 
 
 @SeederRegistry.register
-class PatientSeeder(CSVFileSerializerSeeder):
-    serializer_class = PatientSeederSerializer
+class PatientSeeder(CSVFileModelSeeder):
+    model = User
     csv_file_path = 'seeder/seeders_data/patient.csv'
     priority = 2
     id = 'PatientSeeder'

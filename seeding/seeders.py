@@ -196,7 +196,7 @@ class ModelSeeder(DataSeeder):
         """ Standard Implementation of `seed()` method with `bulk_create()` """
         data = self._get_data()
         model = self._get_model()
-        new_objects = (model(**record_data) for record_data in data)
+        new_objects = [model(**record_data) for record_data in data]
         model.objects.bulk_create(new_objects)
     
 
