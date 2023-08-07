@@ -1,12 +1,5 @@
 test.py
 
-seeder/seeders_data/superuser.py
-seeder/seeders_data/generator.py
-seeder/seeders_data/doctor.py
-seeder/seeders_data/patient.py
-temp_patient.py
-temp_doctor.py
-
 # Byte-compiled / optimized / DLL files
 **/static
 **/media
