@@ -1,7 +1,7 @@
+from typing import Iterable, List, Optional, Sequence
 import uuid
 from django.db import models
 from django.contrib.auth.models import AbstractUser, UserManager as BaseUserManager, Group as BaseGroup
-from django.contrib.auth.hashers import make_password
 from django.contrib.auth.hashers import make_password
 from django.utils import timezone
 from resources.verification import *
@@ -18,11 +18,8 @@ def user_license_path(user, filename):
 
 class UserManager(BaseUserManager):
     def create(self, **kwargs):
-        password = kwargs.pop('password')
-        user:User = super().create(**kwargs)
-        user.set_password(password)
-        user.save()
-        return user
+        kwargs['password'] = make_password(kwargs['password'])
+        return super().create(**kwargs)
     
     def create_user(self, **data):
         if data.get('role') == User.ROLE_PATIENT:
@@ -31,8 +28,12 @@ class UserManager(BaseUserManager):
 
     def create_superuser(self, email, password):
         return self.create_user(email=email, password=password, is_staff=True, is_superuser=True)
-        
     
+    # def bulk_create(self, objs, batch_size=None, ignore_conflicts=True):
+    #     for obj in objs:
+    #         obj.password = make_password(str(obj.password))
+    #     return super().bulk_create(objs, batch_size=batch_size, ignore_conflicts=ignore_conflicts)
+
 class User(AbstractUser):
     objects = UserManager()
 

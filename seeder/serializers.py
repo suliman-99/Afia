@@ -3,71 +3,47 @@ from statics.models import *
 from Auth.models import User
 
 
-class SuperuserSeederSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = ['email', 'password']
-
-    def create(self, validated_data):
-        return User.objects.create_superuser(**validated_data)
-
-
-class DoctorSeederSerializer(serializers.ModelSerializer):
+class CreateUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = [
             'email', 
             'password', 
+            'is_staff', 
+            'is_superuser', 
+            'accepted',
+            'role',
             'first_name', 
             'last_name', 
             'phone_number', 
             'birth_date', 
             'gender', 
-            'photo', 
-            'license',
             'available_for_meeting', 
-            'city_name', 
-            'specialization_name',
-        ]
-
-    photo = serializers.CharField()
-    city_name = serializers.CharField()
-    specialization_name = serializers.CharField()
-
-    def create(self, validated_data):
-        validated_data['role'] == User.ROLE_DOCTOR
-        validated_data['accepted'] == True
-        validated_data['city'] == City.objects.get(name=validated_data.get('city_name'))
-        validated_data['specialization'] == Specialization.objects.get(name=validated_data.get('specialization_name'))
-        return User.objects.create_user(**validated_data)
-
-
-class PatientSeederSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = [
-            'email', 
-            'password', 
-            'first_name', 
-            'last_name', 
-            'phone_number', 
-            'birth_date', 
-            'gender', 
-            'photo', 
             'blood_type',
             'length', 
             'weight',
             'chronic_disease',
             'genetic_disease',
             'other_info',
-            'city_name', 
         ]
+        extra_kwargs = {
+            'first_name': { 'required': False },
+            'last_name': { 'required': False },
+            'phone_number': { 'required': False },
+            'birth_date': { 'required': False },
+            'gender': { 'required': False },
+            'available_for_meeting': { 'required': False },
+            'blood_type': { 'required': False },
+            'length': { 'required': False },
+            'weight': { 'required': False },
+            'chronic_disease': { 'required': False },
+            'genetic_disease': { 'required': False },
+            'other_info': { 'required': False },
+            'accepted': { 'required': False },
+            'role': { 'required': False },
+        }
 
-    photo = serializers.CharField()
-    city_name = serializers.CharField()
 
     def create(self, validated_data):
-        validated_data['role'] == User.ROLE_PATIENT
-        validated_data['city'] == City.objects.get(name=validated_data.get('city_name'))
         return User.objects.create_user(**validated_data)
 

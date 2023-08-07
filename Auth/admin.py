@@ -11,6 +11,7 @@ class UserAdmin(BaseUserAdmin):
         None, {
             'classes': ('wide',),
             'fields': (
+                "password",
                 "id", "email", "email_verified", "role", 'accepted', "is_active", "is_staff", "is_superuser",
                 "first_name", "last_name", 
                 "phone_number", "birth_date", "gender", "photo", "city", 

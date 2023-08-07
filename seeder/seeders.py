@@ -1,30 +1,21 @@
 from seeding.seeders import *
 from advice.models import Advice
 from statics.models import *
-from seeder.seeders_data import advice, specialization, patient, doctor, superuser
 from seeder.serializers import *
 
 
 @SeederRegistry.register
-class SuperuserSeeder(SerializerSeeder):
-    serializer_class = SuperuserSeederSerializer
-    data = superuser.data
-    priority = 0
-    id = 'SuperuserSeeder'
-
-
-@SeederRegistry.register
-class AdviceSeeder(ModelSeeder):
+class AdviceSeeder(CSVFileModelSeeder):
     model = Advice
-    data = advice.data
+    csv_file_path = 'seeder/seeders_data/advice.csv'
     priority = 0
     id = 'AdviceSeeder'
 
 
 @SeederRegistry.register
-class SpecializationSeeder(ModelSeeder):
+class SpecializationSeeder(CSVFileModelSeeder):
     model = Specialization
-    data = specialization.data
+    csv_file_path = 'seeder/seeders_data/specialization.csv'
     priority = 0
     id = 'SpecializationSeeder'
 
@@ -45,32 +36,26 @@ class CitySeeder(CSVFileModelSeeder):
     id = 'CitySeeder'
 
 
-# @SeederRegistry.register
-class DoctorSeeder(SerializerSeeder):
-    serializer_class = DoctorSeederSerializer
-    data = doctor.data
-    priority = 1
+@SeederRegistry.register
+class SuperuserSeeder(CSVFileSerializerSeeder):
+    serializer_class = CreateUserSerializer
+    csv_file_path = 'seeder/seeders_data/superuser.csv'
+    priority = 0
+    id = 'SuperuserSeeder'
+
+
+@SeederRegistry.register
+class DoctorSeeder(CSVFileSerializerSeeder):
+    serializer_class = CreateUserSerializer
+    csv_file_path = 'seeder/seeders_data/doctor.csv'
+    priority = 2
     id = 'DoctorSeeder'
 
 
-# @SeederRegistry.register
-class PatientSeeder(SerializerSeeder):
-    serializer_class = PatientSeederSerializer
-    data = patient.data
-    priority = 1
+@SeederRegistry.register
+class PatientSeeder(CSVFileSerializerSeeder):
+    serializer_class = CreateUserSerializer
+    csv_file_path = 'seeder/seeders_data/patient.csv'
+    priority = 2
     id = 'PatientSeeder'
-
-
-class ConsultationSeeder(SerializerSeeder):
-    serializer_class = None
-    data = 'adsf'
-    priofity = 2
-    id = 'ConsultationSeeder'
-
-
-class ReviewSeeder(SerializerSeeder):
-    serializer_class = None
-    data = 'asdf'
-    priofity = 2
-    id = 'ReviewSeeder'
 
