@@ -1,36 +1,12 @@
-from rest_framework import routers
+from django.urls import path
 from appointment.views import *
 
-router = routers.DefaultRouter()
 
-router.register(
-    'patient-create-appointment',
-    PatientCreateAppointmentView,
-    basename='patient-create-appointment'
-)
+urlpatterns = [
+    path('patient-create-appointment/', PatientCreateAppointmentView.as_view(), name='patient-create-appointment'),
+    path('doctor-accept-appointment/', DoctorAcceptAppointmentView.as_view(), name='doctor-accept-appointment'),
+    path('doctor-reject-appointment/', DoctorRejectAppointmentView.as_view(), name='doctor-reject-appointment'),
+    path('patient-confirm-appointment/', PatientConfirmAppointmentView.as_view(), name='patient-confirm-appointment'),
+    path('patient-cancel-appointment/', PatientCancelAppointmentView.as_view(), name='patient-cancel-appointment'),
+]
 
-router.register(
-    'doctor-accept-appointment',
-    DoctorAcceptAppointmentView,
-    basename='doctor-accept-appointment'
-)
-
-router.register(
-    'doctor-reject-appointment',
-    DoctorRejectAppointmentView,
-    basename='doctor-reject-appointment'
-)
-
-router.register(
-    'patient-confirm-appointment',
-    PatientConfirmAppointmentView,
-    basename='patient-confirm-appointment'
-)
-
-router.register(
-    'patient-cancel-appointment',
-    PatientCancelAppointmentView,
-    basename='patient-cancel-appointment'
-)
-
-urlpatterns = router.urls
