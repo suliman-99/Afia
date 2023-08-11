@@ -65,6 +65,7 @@ INSTALLED_APPS = [
     'consultation',
     'advice',
     'post',
+    'appointment',
 ]
 
 MIDDLEWARE = [
