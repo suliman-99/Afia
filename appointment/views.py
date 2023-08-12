@@ -12,31 +12,31 @@ class PatientCreateAppointmentView(CreateAPIView):
 class DoctorAcceptAppointmentView(UpdateAPIView):
     serializer_class = DoctorAcceptAppointmentSerializer
     queryset = Appointment.objects.all()
-    permission_classes = [IsAccepted, Requested]
+    permission_classes = [IsAccepted, IsDoctorAndOwner, Requested]
 
 
 class DoctorRejectAppointmentView(UpdateAPIView):
     serializer_class = DoctorRejectAppointmentSerializer
     queryset = Appointment.objects.all()
-    permission_classes = [IsAccepted, Requested]
+    permission_classes = [IsAccepted, IsDoctorAndOwner, Requested]
 
 
 class PatientRequestAppointmentView(UpdateAPIView):
     serializer_class = PatientRequestAppointmentSerializer
     queryset = Appointment.objects.all()
-    permission_classes = [IsAccepted, Rejected]
+    permission_classes = [IsAccepted, IsPatientAndOwner, AcceptedOrRejected]
 
 
 class PatientConfirmAppointmentView(UpdateAPIView):
     serializer_class = PatientConfirmAppointmentSerializer
     queryset = Appointment.objects.all()
-    permission_classes = [IsAccepted, Accepted]
+    permission_classes = [IsAccepted, IsPatientAndOwner, Accepted]
 
 
 class PatientCancelAppointmentView(UpdateAPIView):
     serializer_class = PatientCancelAppointmentSerializer
     queryset = Appointment.objects.all()
-    permission_classes = [IsAccepted]
+    permission_classes = [IsAccepted, IsPatientAndOwner]
 
 
 class AppointmentView(ListAPIView):

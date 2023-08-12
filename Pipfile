@@ -16,6 +16,7 @@ unidecode = "*"
 django-cors-headers = "*"
 django-admin-interface = "*"
 pandas = "*"
+django-jazzmin = "*"
 
 [dev-packages]
 

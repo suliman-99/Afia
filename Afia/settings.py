@@ -46,8 +46,7 @@ INTERNAL_IPS = ['127.0.0.1']
 CORS_ALLOWED_ORIGIN_REGEXES = [r"^.*$"]
 
 INSTALLED_APPS = [
-    'admin_interface',
-    'colorfield',
+    'jazzmin',
     'seeding',
     'django.contrib.admin',
     'django.contrib.auth',

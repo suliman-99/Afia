@@ -29,8 +29,8 @@ class Accepted(permissions.BasePermission):
         return obj.status == Appointment.STATUS_ACCEPTED
 
 
-class Rejected(permissions.BasePermission):
+class AcceptedOrRejected(permissions.BasePermission):
     def has_object_permission(self, request, view, obj):
-        return obj.status == Appointment.STATUS_REJECTED
+        return obj.status in [Appointment.STATUS_ACCEPTED, Appointment.STATUS_REJECTED]
     
     
