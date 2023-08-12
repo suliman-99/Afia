@@ -42,12 +42,27 @@ class PatientCancelAppointmentView(UpdateAPIView):
 class AppointmentView(ListAPIView):
     serializer_class = GetAppointmentSerializer
     queryset = Appointment.objects.all()
-    filter_backends = AppointmentOwnerFilterBackend
+    filter_backends = [AppointmentOwnerFilterBackend]
 
     def list(self, request, *args, **kwargs):
-        res = super().list(request, *args, **kwargs)
+        ret = super().list(request, *args, **kwargs)
         queryset = self.filter_queryset(self.get_queryset())
         count = queryset.count()
-        res['count'] = count
-        return res
+        requested_count = queryset.filter(status=Appointment.STATUS_REQUESTED).count()
+        accepted_count = queryset.filter(status=Appointment.STATUS_ACCEPTED).count()
+        rejected_count = queryset.filter(status=Appointment.STATUS_REJECTED).count()
+        confirmed_count = queryset.filter(status=Appointment.STATUS_CONFIRMED).count()
+        canceled_count = queryset.filter(status=Appointment.STATUS_CANCELED).count()
+        future_confirmed_count = queryset.filter(status=Appointment.STATUS_CONFIRMED, date__gte=timezone.now()).count()
+        data = ret.data
+        ret.data = {}
+        ret.data['count'] = count
+        ret.data['requested_count'] = requested_count
+        ret.data['accepted_count'] = accepted_count
+        ret.data['rejected_count'] = rejected_count
+        ret.data['confirmed_count'] = confirmed_count
+        ret.data['canceled_count'] = canceled_count
+        ret.data['future_confirmed_count'] = future_confirmed_count
+        ret.data['data'] = data
+        return ret
 

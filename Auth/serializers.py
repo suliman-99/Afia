@@ -35,6 +35,7 @@ class LogInSerializer(TokenObtainPairSerializer):
     def validate(self, attrs):
         ret = super().validate(attrs)
         if not self.user.email_verified:
+            self.user.send_verification_code_email_message()
             return success_response(unverified_user_response(self.user), 'Check your email to verify your account please.')
         return success_response(verified_user_response(self.user, ret['refresh'], ret['access']), 'Welcome.')
         

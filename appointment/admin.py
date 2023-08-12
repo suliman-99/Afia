@@ -1,3 +1,8 @@
 from django.contrib import admin
+from appointment.models import *
 
-# Register your models here.
+
+@admin.register(Appointment)
+class AppointmentAdmin(admin.ModelAdmin):
+    pass
+
