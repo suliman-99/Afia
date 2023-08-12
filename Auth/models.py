@@ -128,7 +128,7 @@ class User(AbstractUser):
     USERNAME_FIELD ='email'
 
     def __str__(self) -> str:
-        return f'{self.id} - {self.email}'
+        return f'{self.email}'
     
 
 class Group(BaseGroup):
