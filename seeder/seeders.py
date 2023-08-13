@@ -1,3 +1,4 @@
+import secrets
 from django.db.models.query_utils import Q
 from seeding.seeders import *
 from advice.models import Advice
@@ -64,7 +65,7 @@ class PatientSeeder(CSVFileModelSeeder):
 @SeederRegistry.register
 class UserDataSeeder(Seeder):
     priority = 3
-    id = 'UserDataSeeder'
+    id = 'UserDataSeeder2'
 
     def seed(self):
         cities_data = [
@@ -95,23 +96,19 @@ class UserDataSeeder(Seeder):
                     female_patients.append(user)
         for idx, doctor in enumerate(male_doctors + female_doctors + male_patients + female_patients):
             doctor.email_verified = True
-            doctor.city = cities[idx%len(cities)]
+            doctor.city = cities[secrets.randbelow(len(cities))]
         for idx, doctor in enumerate(male_doctors + female_doctors):
-            doctor.specialization = specializations[idx%len(specializations)]
-            if doctor.gender == User.GENDER_MALE:
-                male_doctors.append(doctor)
-            else:
-                female_doctors.append(doctor)
+            doctor.specialization = specializations[secrets.randbelow(len(specializations))]
         def make_photo_url(file_name):
             return f'users/photos/{file_name}.jpg'
         for idx, male_doctor in enumerate(male_doctors):
-            male_doctor.photo = make_photo_url(f'md{(idx%20)+1}')
+            male_doctor.photo = make_photo_url(f'md{secrets.randbelow(20)+1}')
         for idx, female_doctor in enumerate(female_doctors):
-            female_doctor.photo = make_photo_url(f'fd{(idx%20)+1}')
+            female_doctor.photo = make_photo_url(f'fd{secrets.randbelow(20)+1}')
         for idx, male_patient in enumerate(male_patients):
-            male_patient.photo = make_photo_url(f'mp{(idx%20)+1}')
+            male_patient.photo = make_photo_url(f'mp{secrets.randbelow(20)+1}')
         for idx, female_patient in enumerate(female_patients):
-            female_patient.photo = make_photo_url(f'fp{(idx%20)+1}')
+            female_patient.photo = make_photo_url(f'fp{secrets.randbelow(20)+1}')
         User.objects.bulk_update(
             male_doctors + female_doctors + male_patients + female_patients, 
             [
