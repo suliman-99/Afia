@@ -6,7 +6,7 @@ from Auth.models import *
 
 @admin.register(User)
 class UserAdmin(BaseUserAdmin):
-    list_display = ['id', 'email', 'email_verified', 'phone_number', '_clickable_photo', 'birth_date', 'gender', 'city', 'first_name', 'last_name', 'role', 'accepted', 'is_active', 'is_staff', 'is_superuser']
+    list_display = ['id', 'email', 'email_verified', 'phone_number', '_clickable_photo', 'birth_date', 'gender', 'first_name', 'last_name', 'city', 'specialization', 'role', 'accepted', 'is_active', 'is_staff', 'is_superuser']
 
     fieldsets = ((
         None, {
