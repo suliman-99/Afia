@@ -27,10 +27,5 @@ class Requested(permissions.BasePermission):
 class Accepted(permissions.BasePermission):
     def has_object_permission(self, request, view, obj):
         return obj.status == Appointment.STATUS_ACCEPTED
-
-
-class AcceptedOrRejected(permissions.BasePermission):
-    def has_object_permission(self, request, view, obj):
-        return obj.status in [Appointment.STATUS_ACCEPTED, Appointment.STATUS_REJECTED]
     
     

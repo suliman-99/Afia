@@ -24,7 +24,7 @@ class DoctorRejectAppointmentView(UpdateAPIView):
 class PatientRequestAppointmentView(UpdateAPIView):
     serializer_class = PatientRequestAppointmentSerializer
     queryset = Appointment.objects.all()
-    permission_classes = [IsAccepted, IsPatientAndOwner, AcceptedOrRejected]
+    permission_classes = [IsAccepted, IsPatientAndOwner]
 
 
 class PatientConfirmAppointmentView(UpdateAPIView):
