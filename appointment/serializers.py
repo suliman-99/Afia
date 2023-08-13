@@ -8,9 +8,10 @@ from appointment.models import *
 class GetAppointmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Appointment
-        fields = ['id', 'status', 'date', 'time', 'patient_notes', 'doctor_notes', 'doctor']
+        fields = ['id', 'status', 'date', 'time', 'patient_notes', 'doctor_notes', 'doctor', 'patient']
 
     doctor = UserSerializer()
+    patient = UserSerializer()
 
 
 class PatientCreateAppointmentSerializer(serializers.ModelSerializer):
