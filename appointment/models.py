@@ -19,6 +19,7 @@ class Appointment(models.Model):
 
     status = models.IntegerField(choices=STATUS_CHOICES, default=STATUS_REQUESTED)
     date = models.DateField(null=True, blank=True)
+    suggested_date = models.DateField(null=True, blank=True)
     time = models.TimeField(null=True, blank=True)
     patient_notes = models.TextField(null=True, blank=True)
     doctor_notes = models.TextField(null=True, blank=True)
