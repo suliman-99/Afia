@@ -8,7 +8,7 @@ class UserSerializer(serializers.ModelSerializer):
         fields = (
             'id', 'email', 'email_verified', 'role', 'first_name', 'last_name', 'phone_number', 'birth_date', 
             'gender',  'photo', 'blood_type', 'length', 'weight', 'chronic_disease', 'genetic_disease', 'other_info',
-            'license', 'available_for_meeting', 'city', 'specialization',
+            'license', 'available_for_meeting', 'experience', 'city', 'specialization',
         )
         
     city = CitySerializer()
