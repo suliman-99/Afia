@@ -1,4 +1,5 @@
 import secrets
+import datetime
 from django.db.models.query_utils import Q
 from seeding.seeders import *
 from advice.models import Advice
@@ -119,5 +120,91 @@ class UserDataSeeder(Seeder):
             ]
         )
         
+
+@SeederRegistry.register
+class DoctorExperience(Seeder):
+    priority = 4
+    id = 'DoctorExperience'
+
+    def seed(self):
+        hospitals = {
+            'Damascus': [
+                'Al-Mouwasat Hospital',
+                'Ibn Al-Nafis Hospital',
+                'Tishreen Military Hospital',
+                'Al-Shami Hospital',
+                'Al-Assad University Hospital',
+                'Ibn Al-Jazzar Hospital',
+                'Syrian Arab Red Crescent Hospital',
+                'Al-Mujtahid Hospital',
+                'Syrian French Hospital',
+                'Al-Asadi Medical Center',
+                'Al-Bassel Heart Institute',
+                'Al-Awael Medical Center',
+                'Al-Razi Hospital',
+                'Al-Mowasat Private Hospital',
+                'Al-Salam Hospital',
+                'Al-Noor Hospital',
+                'Hajjar Hospital',
+                'Al-Rawabi Hospital',
+                'Al-Afdal Hospital',
+                'Al-Hayat Hospital'
+            ],
+            'Homs': [
+                'Al-Birr and Al-Safwa Hospital',
+                'National Hospital',
+                'Al-Amal Hospital',
+                'Al-Watany Hospital',
+                'Al-Bourj Hospital',
+                'Ibn Al-Jazzar Hospital',
+                'Al-Nour Hospital',
+                'Al-Bassel Heart Institute',
+                'Al-Furat Hospital',
+                'Homs Military Hospital',
+                'Al-Hayat Hospital',
+                'Tal Kalakh Hospital',
+                'Al-Qusair Hospital',
+                'Talbiseh Hospital',
+                'Al-Qalamoun Hospital',
+                'Homs Central Hospital',
+                'Al-Bassel Hospital for Children',
+                'Al-Ghouta Hospital',
+                'Al-Saddiq Hospital',
+                'Al-Moallem Hospital'
+            ],
+            'Aleppo': [
+                'Al-Razi Hospital',
+                'University Hospital of Aleppo',
+                'Al-Shifaa Hospital',
+                'Al-Mouwasat Hospital',
+                'Al-Ittihad Hospital',
+                'Al-Bassel Hospital',
+                'Al-Jamiliyah Hospital',
+                'Al-Mukharram Hospital',
+                'Ibn Khaldoun Hospital',
+                'Al-Zahrawi Hospital',
+                'Al-Watany Hospital',
+                'Al-Sham Hospital',
+                'Al-Wataniya Hospital',
+                'Dar Al-Shifa Hospital',
+                'Al-Qadi Askar Hospital',
+                'Al-Salama Hospital',
+                'Al-Mansoura Hospital',
+                'Al-Rajaa Hospital',
+                'Al-Karamah Hospital',
+                'Ibn Al-Nafees Hospital'
+            ]
+        }
+        doctors:list[User] = list(User.objects.filter(role=User.ROLE_DOCTOR))
+        for doctor in doctors:
+            doctor.birth_date = datetime.datetime.strptime(f'{secrets.randbelow(16)+1970}-{secrets.randbelow(12)+1}-{secrets.randbelow(28)+1}', '%Y-%m-%d')
+            graduation_year = doctor.birth_date.year + 27
+            city_name = doctor.city.name
+            city_hospitals = hospitals.get(city_name, [])
+            if not city_hospitals:
+                continue
+            hospital = city_hospitals[secrets.randbelow(len(city_hospitals))]
+            doctor.experience = f'{doctor.specialization} specialized since {graduation_year} in {hospital}'
+        User.objects.bulk_update(doctors, ['birth_date', 'experience'])
         
 

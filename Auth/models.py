@@ -123,6 +123,7 @@ class User(AbstractUser):
     license = models.ImageField(max_length=500, upload_to=user_license_path, null=True, blank=True)
     available_for_meeting = models.BooleanField(default=False)
     specialization = models.ForeignKey(Specialization, on_delete=models.PROTECT, null=True, blank=True)
+    experience = models.TextField(null=True, blank=True)
 
     REQUIRED_FIELDS = ['password']
     USERNAME_FIELD ='email'
