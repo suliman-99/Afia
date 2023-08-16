@@ -21,13 +21,15 @@ class UserManager(BaseUserManager):
         kwargs['password'] = make_password(kwargs['password'])
         return super().create(**kwargs)
     
-    def create_user(self, **data):
-        if data.get('role') == User.ROLE_PATIENT:
-            data['accepted'] = True
-        return self.create(**data)
+    def create_user(self, **kwargs):
+        if kwargs.get('role') == User.ROLE_PATIENT:
+            kwargs['accepted'] = True
+        return self.create(**kwargs)
 
-    def create_superuser(self, email, password):
-        return self.create_user(email=email, password=password, is_staff=True, is_superuser=True)
+    def create_superuser(self, **kwargs):
+        kwargs['is_staff'] = True
+        kwargs['is_superuser'] = True
+        return self.create_user(**kwargs)
     
     def bulk_create(self, objs, batch_size=None, ignore_conflicts=True):
         for obj in objs:
